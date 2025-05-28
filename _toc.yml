@@ -1,0 +1,24 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+
+parts:
+- caption: Course Details
+  numbered: false
+  chapters:  
+  - file: Details/Contents
+  - file: Details/Learning  
+  - file: Details/Resources
+- caption: Notebooks
+  numbered: true
+  chapters:
+  - file: Lectures/lecture_1/Lecture1_notes
+  - file: Lectures/lecture_2/data_preprocessing_solutions
+  - file: Lectures/lecture_3/Lecture3_simple_linear_regression
+  - file: Lectures/lecture_3/Lecture3_multiple_linear_regression
+  - file: Lectures/lecture_4/Lecture4_multiple_linear_regression
+  - file: Lectures/lecture_4/Lecture4_Train_Test_Split
+  - file: Lectures/lecture_5/Lecture5_logistic_regression
+  - file: Lectures/lecture_5/Lecture5_multiple_logistic_regression
