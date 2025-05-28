@@ -1,0 +1,1631 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>4. Import the relevant libraries &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_4/Lecture4_multiple_linear_regression';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="11. Train test split method" href="Lecture4_Train_Test_Split.html" />
+    <link rel="prev" title="3. Multiple linear regression" href="../lecture_3/Lecture3_multiple_linear_regression.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Course Description
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Course Details</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Details/Contents.html">Course Content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Details/Learning.html">Learning Outcomes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Details/Resources.html">Resources</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">1. Data preprocessing example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Import the relevant libraries</a></li>
+
+
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLectures/lecture_4/Lecture4_multiple_linear_regression.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/Lectures/lecture_4/Lecture4_multiple_linear_regression.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Import the relevant libraries</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Import the relevant libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">5. Load the data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">6. Explore the descriptive statistics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-ols-assumptions">7. Check the OLS assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-1-linearity">7.1. Assumption 1: Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-2-homoscedasticity">7.2. Assumption 2: Homoscedasticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-3-autocorrelation">7.3. Assumption 3: Autocorrelation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-4-multicollinearity">7.4. Assumption 4: Multicollinearity</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dummy-variables">8. Create dummy variables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-model">9. Linear regression model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-inputs-and-the-targets">9.1. Declare the inputs and the targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">9.2. Feature scaling</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">10. Train test split</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>OLS assumptions</p>
+<p>Previous week, we learnt a fair deal about linear regressions. We talked about:</p>
+<ul class="simple">
+<li><p>Difference between correlation and causation</p></li>
+<li><p>Simple linear regression model</p></li>
+<li><p>Multiple linear regression model</p></li>
+<li><p>Decomposition of variability - SST, SSR and SSE</p></li>
+<li><p>Ordinary Least Squares</p></li>
+<li><p>R-squared and adjusted R-squared</p></li>
+<li><p>Feature selection using F-test</p></li>
+</ul>
+<p>Great! It’s now time to understand assumptions behind regressions.</p>
+<p>We will talk about four key assumptions. It is important to understand all of them and consider them before you perform a regression analysis.</p>
+<ul class="simple">
+<li><p>The first assumption we will talk about is linearity.</p></li>
+</ul>
+<p>As we saw in the previous lecture, a linear regression is the simplest non-trivial relationship. Of course there are more complicated regressions, such as the generalized least squares, bayesian regression and so on. This assumption though relates to linear regressions.</p>
+<p>The first step before we start performing regressions is to verify if the relationship between the dependent variable and the independent variable is linear. The easiest way to do this is to choose an independent variable, say x1 and plot it against the dependent variable y on a scatterplot.</p>
+<p>If the data points form a pattern that looks like a straight line, then a linear regression model is appropriate to be applied.</p>
+<p>Now, what if by plotting a variable x2 against y, we dont see a pattern that looks like a straight line, but rather looks like a curved line? Using a linear regression would not be appropriate in this case directly. However, there is a way to fix this situation. We can transform the variables appropriately. For instance, if we had a relationship that looks like a quadratic curve, we can transform x2 to its square value, and then obtain a linear relationship between y and (x2)-square.</p>
+<p>The takeaway is that if the relationship is nonlinear, you should not use the data directly. You should transform it appropriately and then proceed with linear regression models.</p>
+<ul class="simple">
+<li><p>Nice! Our second assumption is called homoscedasticity.</p></li>
+</ul>
+<p>Homoscedasticity means to have equal variance. In particular, here we are saying that the error term should have equal variance, one with the other.</p>
+<p>We can make this clear by looking at two plots. The plot on the left has equal variance for the error terms and hence is homoscedastic, while the plot on the right does not have equal variance and hence is not homoscedastic. It is instead called heteroscedastic.</p>
+<p>For the plot on the right, the regression line would imply that for smaller values of the independent variables we would have a better prediction, for bigger values we would have a poorer prediction. We don’t like such uncertainties in linear regression and hence would like to avoid them.</p>
+<p>So, how can we circumvent heteroscedasticity?</p>
+<p>First, we can look for outliers and try to remove them.</p>
+<p>Second, we can consider the log transformation. Let’s understand this by taking a simple example. Here we see a scatterplot y vs. x1. We can clearly recognize heteroscedasticity here. As x1 grows, the variability in y also increases. Now, let’s take the natural logarithm of y and plot log y vs. x1. This is called a semilog plot. We see that the heteroscedasticity we observed before transformation is now gone! This is thus a good material for linear regression. Similarly, we can encounter cases where we would need to take log x1 instead of log y, or we would need to take log y as well as log x1, the so called log-log plot. So, the take away message here is that, using a log transformation, we can overcome heteroscedasticity in many cases.</p>
+<ul class="simple">
+<li><p>Good! Our third assumption is no autocorrelation.</p></li>
+</ul>
+<p>This means that the error terms (or the residuals) are assumed to be uncorrelated. Mathematically, we can write this as:</p>
+<p>Autocorrelation is usually violated in time series data. For example, if you are looking at the productivity of a general individual on a daily basis, you might observe that the productivity peaks on Mondays and Tuesdays, and gradually drops by Friday, and then again peaks the next Monday and so on. A reason for this that an individual is well rested on the weekends and hence performs well on Mondays, while the same individual could be tired by Friday and is hence less productive. So, we start observing patterns in the data, and the error terms are no longer uncorrelated.</p>
+<p>There are no straightforward fixes to this assumption. The only thing you can do is avoid using a linear regression in such a setting.</p>
+<p>Instead, there are other types of regressions that deal with time series data. It is possible to use an auto regressive model, a moving average model or even an auto regressive moving average model to deal with time series data.</p>
+<ul class="simple">
+<li><p>We come to our last assumption, that is no multicollinearity.</p></li>
+</ul>
+<p>We observe multicollinearity when two or more variables have a high degree of correlation. We have seen how to compute the correlation coefficient previously. Mathematically, muticollinearity is represented as:</p>
+<p>To understand this, let’s take an example. Let’s say we are looking at the health of an infant against two variables age and weight. With infants, it is generally observed that as the age increases, the weight increases as well, thus making these two variables highly positively correlated. Using both these variables in the model could mess up the coefficients and result in wrong p-values in F regression and so on. Therefore, it is recommended to fix this issue before proceeding with regression.</p>
+<p>So, how do we check for multicollinearity? Statisticians have developed a measure called Variance Inflation Factor (or VIF), which is one of the best ways to check for multicollinearity.</p>
+<p>VIF produces a measure which estimates how much larger the square root of the standard error of an estimate is compared to a situation where the variable was completely uncorrelated with the other predictors. You will see that, in order to use this measure in practice, we shall rely on a library called statsmodel where the VIF method is directly available for us.</p>
+<p>VIF values can range from 1 to +infinity. When VHF is 1, it means that there is no multicollinearity at all. Generally values between 1 and 5 are considered perfectly OK. Here’s where it becomes tricky. Some sources state that a VHF above 5 is unacceptable. Others put the boundary at 6 and some others put the boundary at even 10! Unfortunately there is no firm consensus on the topic. Therefore, this cutoff more or less depends on the context and personal choice.</p>
+<p>There are three types of fixes.</p>
+<p>The first one is to drop one of the two variables.</p>
+<p>The second is to transform them into one variable.</p>
+<p>The third possibility is to keep the variables in the model, but handle them with caution. This is because Multicollinearity affects certain aspects of the model, while some others are unaffected. This is usually done by skilled data scientists. Here is a nice article I encourage you to read about multicollinearity: <a class="reference external" href="https://statisticsbyjim.com/regression/multicollinearity-in-regression-analysis/">https://statisticsbyjim.com/regression/multicollinearity-in-regression-analysis/</a></p>
+<p>Ok, that’s about it for our lecture on assumptions in linear regression. Let’s now look at an example where these assumptions are put to practice!</p>
+<p>Let’s assume that you are working for a second-hand car sale company. They have gathered information from several customers about their car specifications including the price of the car they wish to avail. The primary goal for you is to predict the price of a car given these attributes. Let’s go ahead and look at the data set in our notebook directly.</p>
+<section id="import-the-relevant-libraries">
+<h1><span class="section-number">4. </span>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h1>
+<p>As usual, before we get to data, the first steps are to import the relevant libraries.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-data">
+<h1><span class="section-number">5. </span>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h1>
+<p>Now, I’ll load the dataset in the variable data and print out a few lines of the dataset. (pause)</p>
+<p>OK, here’s our data set.</p>
+<p>This is a list of second hand cars containing specifications such as the brand, price of the car, mileage, engine volume and the year of registration. To recap, our goal is to predict the price of a used car depending on its specifications.</p>
+<p>Now, brand is a potential feature because we know that certain brands are more expensive than the others.</p>
+<p>The second relevant variable is mileage, since the more a car is driven the cheaper it should be.</p>
+<p>The third potential feature is the engine volume. Generally, we expect the larger the engine volume, the more expensive a car is.</p>
+<p>The final variable is year of production. The older the car the cheaper it is generally. Of course, there are some vintage cars that can be an exception to this trend.</p>
+<p>Note that brand is the only categorical variable here, while the others are numerical variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;car_sale.xlsx&#39;</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Mileage</th>
+      <th>EngineV</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BMW</td>
+      <td>4200.0</td>
+      <td>277</td>
+      <td>2.0</td>
+      <td>1991</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mercedes-Benz</td>
+      <td>7900.0</td>
+      <td>427</td>
+      <td>2.9</td>
+      <td>1999</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mercedes-Benz</td>
+      <td>13300.0</td>
+      <td>358</td>
+      <td>5.0</td>
+      <td>2003</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>23000.0</td>
+      <td>240</td>
+      <td>4.2</td>
+      <td>2007</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Toyota</td>
+      <td>18300.0</td>
+      <td>120</td>
+      <td>2.0</td>
+      <td>2011</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="explore-the-descriptive-statistics">
+<h1><span class="section-number">6. </span>Explore the descriptive statistics<a class="headerlink" href="#explore-the-descriptive-statistics" title="Link to this heading">#</a></h1>
+<p>So, let’s explore the descriptive statistics now. We see that there are no missing values. Further, the values seem within expected ranges, so no need to do a thorough outlier analysis here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Mileage</th>
+      <th>EngineV</th>
+      <th>Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>3867</td>
+      <td>3867.000000</td>
+      <td>3867.000000</td>
+      <td>3867.000000</td>
+      <td>3867.000000</td>
+    </tr>
+    <tr>
+      <th>unique</th>
+      <td>7</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>top</th>
+      <td>Volkswagen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>freq</th>
+      <td>848</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>NaN</td>
+      <td>18194.455679</td>
+      <td>160.542539</td>
+      <td>2.450440</td>
+      <td>2006.709853</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>NaN</td>
+      <td>19085.855165</td>
+      <td>95.633291</td>
+      <td>0.949366</td>
+      <td>6.103870</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>NaN</td>
+      <td>800.000000</td>
+      <td>0.000000</td>
+      <td>0.600000</td>
+      <td>1988.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>NaN</td>
+      <td>7200.000000</td>
+      <td>91.000000</td>
+      <td>1.800000</td>
+      <td>2003.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>NaN</td>
+      <td>11700.000000</td>
+      <td>157.000000</td>
+      <td>2.200000</td>
+      <td>2008.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>NaN</td>
+      <td>21700.000000</td>
+      <td>225.000000</td>
+      <td>3.000000</td>
+      <td>2012.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>NaN</td>
+      <td>129222.000000</td>
+      <td>435.000000</td>
+      <td>6.300000</td>
+      <td>2016.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="check-the-ols-assumptions">
+<h1><span class="section-number">7. </span>Check the OLS assumptions<a class="headerlink" href="#check-the-ols-assumptions" title="Link to this heading">#</a></h1>
+<p>Ok, in the previous lectures, we basically went ahead with regression without checking for the ordinary least square method assumptions. That’s ok because we learnt the mechanics of how linear regression models are built. However, in reality, before one goes ahead and builds a linear regression model, we need to make sure we are not violating the assumptions we studied. That’s the task we will do right now.</p>
+<p>So, here we have a new section called “Check the OLS assumptions”.</p>
+<p>The first assumption we want to check is if the plots of the dependent variable vs the independent variables are linear, so that a linear regression model could be applied. To do so, let’s plot the relevant scatter plots amongst the numerical variables.</p>
+<p>We shall first create three subplots using this line of code. (pause) Let us then plot a scatter plot Price vs. Mileage. This can be done by writing: ax1.scatter(data[‘Year’],data[‘Price’]). Let us also set a title for this plot. (pause)</p>
+<p>We can go ahead and repeat the scatterplots for Price vs. Engine volume (pause), and Price vs. Mileage. (pause). Let’s now visualize these plots.</p>
+<p>We can see that there are patterns here, but they are not linear. Therefore, we should not run a linear regression immediately. We should first transform one or more variables, and make them eligibile for linear regression modeling.</p>
+<p>We can see from Prive vs Mileage and Price vs. year plots that the relationship is somewhat exponential. So, let’s go ahead and apply a log transformation to the price variable.</p>
+<section id="assumption-1-linearity">
+<h2><span class="section-number">7.1. </span>Assumption 1: Linearity<a class="headerlink" href="#assumption-1-linearity" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mileage&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Price and Mileage&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;EngineV&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Price and EngineV&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Price and Year&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/e849723beb2bfa2fa4f1db96671282aff7d14b9f63cfaa6186d1528aeb3c8e23.png" src="../../_images/e849723beb2bfa2fa4f1db96671282aff7d14b9f63cfaa6186d1528aeb3c8e23.png" />
+</div>
+</div>
+<p>Let us create a new variable called log_price, and then use numpy’s log method to transform the price variable. We write:
+Now we can create a new column called log_price in the same dataframe and store these values. (pause) Let’s see the data. Good! we have a new column called log_price here.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Price&#39;</span><span class="p">])</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;log_price&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">log_price</span>
+<span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Mileage</th>
+      <th>EngineV</th>
+      <th>Year</th>
+      <th>log_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BMW</td>
+      <td>4200.0</td>
+      <td>277</td>
+      <td>2.0</td>
+      <td>1991</td>
+      <td>8.342840</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mercedes-Benz</td>
+      <td>7900.0</td>
+      <td>427</td>
+      <td>2.9</td>
+      <td>1999</td>
+      <td>8.974618</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mercedes-Benz</td>
+      <td>13300.0</td>
+      <td>358</td>
+      <td>5.0</td>
+      <td>2003</td>
+      <td>9.495519</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>23000.0</td>
+      <td>240</td>
+      <td>4.2</td>
+      <td>2007</td>
+      <td>10.043249</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Toyota</td>
+      <td>18300.0</td>
+      <td>120</td>
+      <td>2.0</td>
+      <td>2011</td>
+      <td>9.814656</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can now go ahead and replot the scatterplots using the log price variable rather than the price variable. We simply copy paste the code from above and change the variable price to log price. (pause) Great! we can see that the patterns are now more or less linear in all these plots. So, we have seen that the log transformation has helped us and we can now apply linear regression using the log price variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mileage&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;log_price&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Log Price and Mileage&#39;</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;EngineV&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;log_price&#39;</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Log Price and EngineV&#39;</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;log_price&#39;</span><span class="p">])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Log Price and Year&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/1f2d74a37ee9d80165b0a65458c37141743990d389b4675f45aad9d1344b2fcc.png" src="../../_images/1f2d74a37ee9d80165b0a65458c37141743990d389b4675f45aad9d1344b2fcc.png" />
+</div>
+</div>
+<p>We can now simply drop the Price column, it is no longer required.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Price&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Brand</th>
+      <th>Mileage</th>
+      <th>EngineV</th>
+      <th>Year</th>
+      <th>log_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BMW</td>
+      <td>277</td>
+      <td>2.0</td>
+      <td>1991</td>
+      <td>8.342840</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mercedes-Benz</td>
+      <td>427</td>
+      <td>2.9</td>
+      <td>1999</td>
+      <td>8.974618</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mercedes-Benz</td>
+      <td>358</td>
+      <td>5.0</td>
+      <td>2003</td>
+      <td>9.495519</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>240</td>
+      <td>4.2</td>
+      <td>2007</td>
+      <td>10.043249</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Toyota</td>
+      <td>120</td>
+      <td>2.0</td>
+      <td>2011</td>
+      <td>9.814656</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="assumption-2-homoscedasticity">
+<h2><span class="section-number">7.2. </span>Assumption 2: Homoscedasticity<a class="headerlink" href="#assumption-2-homoscedasticity" title="Link to this heading">#</a></h2>
+<p>Now, we come to our second assumption, that is homoscedasticity. We can see from the above plots that this assumption more or less holds true (pause). The reason for this is that we have already implemented a log transformation, which happens to be a good technique to circumvent the issue of homoscedasticity! So, we don’t need to do anything here.</p>
+</section>
+<section id="assumption-3-autocorrelation">
+<h2><span class="section-number">7.3. </span>Assumption 3: Autocorrelation<a class="headerlink" href="#assumption-3-autocorrelation" title="Link to this heading">#</a></h2>
+<p>Once again, we don’t need to put in much efforts here since these observations are not coming from time series data. Each of these observations comes randomly from different customers who are willing to sell their cars through the platform. Therefore, there is no reason to worry about the observations to be dependent on each other.</p>
+</section>
+<section id="assumption-4-multicollinearity">
+<h2><span class="section-number">7.4. </span>Assumption 4: Multicollinearity<a class="headerlink" href="#assumption-4-multicollinearity" title="Link to this heading">#</a></h2>
+<p>To check whether this assumption holds, we first look at the correlation matrix. We can do that by writing: data.corr(method=pearson). Good!</p>
+<p>Barring the dependent variable, we see that there is a strong correlation between year and Mileage. This makes sense because the older the car, the more distance it would have covered. Therefore we have grounds to expect some degree of multicollinearity in the dataset.</p>
+<p>We know that the variance inflation factor or VIF is a great way to check for multicollinearity. In order to avail this method, we use a library called statsmodels. We then import the variance_inflation_factor function from statsmodels by writing:
+from statsmodels.stats.outliers_influence import variance_inflation_factor</p>
+<p>We can then store the relevant features in a new variable called variables. we write:</p>
+<p>we can now create dataframe to visualize vif values. we write:
+vif = pd.DataFrame()</p>
+<p>Let us now compute the vif values for all the features and store it in a column called VIF. To do so, we write:</p>
+<p>Let’s write another line of code to store the corresponding feature names. we write:</p>
+<p>Now, let’s print the vif dataframe. (pause)</p>
+<p>Good! we see that we have a column containing vif values and the corresponding features. Recall that we said vif values range from 1 to +infinity. The higher the value of vif, the greater is the degree of multicollinearity, which is not good for linear regression. Also, recall that some statisticians consider vif values above 5 are unacceptable, while others state values above 10 are unacceptable. In real-life cases, it’s quite hard for vif values to be strictly below 5, therefore let’s choose 10 as the cutoff for this case. Therefore, we see that the Year variable falls in this category and must be removed before performing regression.</p>
+<p>So, let’s drop the year column from the dataframe. (pause) Good! we now have gone through all the important assumptions and have the following dataset for regression modeling!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data</span><span class="o">.</span><span class="n">corr</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;pearson&#39;</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/frame.py:11049,</span> in <span class="ni">DataFrame.corr</span><span class="nt">(self, method, min_periods, numeric_only)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11047</span> <span class="n">cols</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="g g-Whitespace">  </span><span class="mi">11048</span> <span class="n">idx</span> <span class="o">=</span> <span class="n">cols</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="ne">&gt; </span><span class="mi">11049</span> <span class="n">mat</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">,</span> <span class="n">na_value</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">  </span><span class="mi">11051</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;pearson&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">  </span><span class="mi">11052</span>     <span class="n">correl</span> <span class="o">=</span> <span class="n">libalgos</span><span class="o">.</span><span class="n">nancorr</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">minp</span><span class="o">=</span><span class="n">min_periods</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/frame.py:1993,</span> in <span class="ni">DataFrame.to_numpy</span><span class="nt">(self, dtype, copy, na_value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1991</span> <span class="k">if</span> <span class="n">dtype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1992</span>     <span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1993</span> <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mgr</span><span class="o">.</span><span class="n">as_array</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">na_value</span><span class="o">=</span><span class="n">na_value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1994</span> <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">dtype</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">dtype</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1995</span>     <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">)</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/internals/managers.py:1694,</span> in <span class="ni">BlockManager.as_array</span><span class="nt">(self, dtype, copy, na_value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1692</span>         <span class="n">arr</span><span class="o">.</span><span class="n">flags</span><span class="o">.</span><span class="n">writeable</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="g g-Whitespace">   </span><span class="mi">1693</span> <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1694</span>     <span class="n">arr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_interleave</span><span class="p">(</span><span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span> <span class="n">na_value</span><span class="o">=</span><span class="n">na_value</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1695</span>     <span class="c1"># The underlying data was copied within _interleave, so no need</span>
+<span class="g g-Whitespace">   </span><span class="mi">1696</span>     <span class="c1"># to further copy if copy=True or setting na_value</span>
+<span class="g g-Whitespace">   </span><span class="mi">1698</span> <span class="k">if</span> <span class="n">na_value</span> <span class="ow">is</span> <span class="n">lib</span><span class="o">.</span><span class="n">no_default</span><span class="p">:</span>
+
+<span class="nn">File /opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/pandas/core/internals/managers.py:1753,</span> in <span class="ni">BlockManager._interleave</span><span class="nt">(self, dtype, na_value)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1751</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1752</span>         <span class="n">arr</span> <span class="o">=</span> <span class="n">blk</span><span class="o">.</span><span class="n">get_values</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1753</span>     <span class="n">result</span><span class="p">[</span><span class="n">rl</span><span class="o">.</span><span class="n">indexer</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span>
+<span class="g g-Whitespace">   </span><span class="mi">1754</span>     <span class="n">itemmask</span><span class="p">[</span><span class="n">rl</span><span class="o">.</span><span class="n">indexer</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="g g-Whitespace">   </span><span class="mi">1756</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">itemmask</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
+
+<span class="ne">ValueError</span>: could not convert string to float: &#39;BMW&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.outliers_influence</span><span class="w"> </span><span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="n">data</span><span class="p">[[</span><span class="s1">&#39;Mileage&#39;</span><span class="p">,</span><span class="s1">&#39;EngineV&#39;</span><span class="p">,</span><span class="s1">&#39;Year&#39;</span><span class="p">]]</span>
+
+<span class="n">vif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">variables</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vif</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIF</th>
+      <th>features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.791584</td>
+      <td>Mileage</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>7.662068</td>
+      <td>EngineV</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>10.354854</td>
+      <td>Year</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Year&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Brand</th>
+      <th>Mileage</th>
+      <th>EngineV</th>
+      <th>log_price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>BMW</td>
+      <td>277</td>
+      <td>2.0</td>
+      <td>8.342840</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mercedes-Benz</td>
+      <td>427</td>
+      <td>2.9</td>
+      <td>8.974618</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mercedes-Benz</td>
+      <td>358</td>
+      <td>5.0</td>
+      <td>9.495519</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Audi</td>
+      <td>240</td>
+      <td>4.2</td>
+      <td>10.043249</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Toyota</td>
+      <td>120</td>
+      <td>2.0</td>
+      <td>9.814656</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+<section id="create-dummy-variables">
+<h1><span class="section-number">8. </span>Create dummy variables<a class="headerlink" href="#create-dummy-variables" title="Link to this heading">#</a></h1>
+<p>Let’s look at the dataset, are we ready to apply a regression model? Not yet, we have a column called Brand, that represents categorical data and cannot be simply put in the regression. We need to reframe them appropriately before we can use them in a regression model. In this video, we will talk about how to do this using the concept of dummy variables. The word dummy means an imitation or a copy that stands as a substitute in regression analysis.</p>
+<p>A dummy is a variable that is used to include categorical data into a regression model. So far we have seen variables that are numerical in nature, for example, the efficiency, size of the catalyst, the price of a car, mileage, engine volume and the year of registration. We will now explore how to include variables such as the shape of a catalyst, the metal used in the catalyst or in other contexts, variables such as gender and brand into a regression model.</p>
+<p>In regression, we can handle the categorical data by replacing the values with zeros and ones. Let’s take some examples to see what I mean.</p>
+<p>If we had a column called “gender” and it contained two unique values:male and female, we could simply represent males as 0 and females as 1, for example. What if we had a column containing the metal used in the catalyst, and it has four unique values: platinum, gold, silver and copper? How many dummies would we create?</p>
+<p>An extremely important note is that if we have N unique categorical values for a feature, we have to create N-1 dummies. So, in this case, we would create 4-1, that is 3 dummies.</p>
+<p>Now, Why is that?</p>
+<p>Let’s consider the metal column. Gold dummy would be 1 if the metal is gold and zero if it not gold. Similarly, silver dummy would be 1 if the metal is gold and zero if it is not. And similarly for copper. Now, for the first metal, in this case, platinum, we will not create a dummy variable. The reasoning is as follows: if all other dummy variables are zeros, it’s clear that the metal is platinum.</p>
+<p>If we include a separate variable called platinum dummy, it would be redundant as we are not adding any new information by including this variable. As a consequence, we will introduce multicollinearity to the regression as the platinum dummy would be perfectly determined by the other variables. Therefore, if we have N unique categories there will only be N-1 dummies.</p>
+<p>Alright, let’s dive straight into our notebook example to see how this is done in practice.</p>
+<p>So, we have a new section called “Create dummy variables” to take care of the brand column in our dataset. To know how many unique categories we have in the brand feature, we can simply write: data[‘Brand’].unique(), and then let’s sort them in alphabetical order.</p>
+<p>We see that we have 7 unique brands: ‘Audi’,
+‘BMW’,
+‘Mercedes-Benz’,
+‘Mitsubishi’,
+‘Renault’,
+‘Toyota’,
+‘Volkswagen’</p>
+<p>This means we need to create 6 dummy variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat_vals</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Brand&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="n">cat_vals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Audi&#39;,
+ &#39;BMW&#39;,
+ &#39;Mercedes-Benz&#39;,
+ &#39;Mitsubishi&#39;,
+ &#39;Renault&#39;,
+ &#39;Toyota&#39;,
+ &#39;Volkswagen&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can create dummies by using a useful method called get_dummies from the pandas library. This method spots all categorical variables and creates dummies automatically.  OK, let’s create a new variable calle:</p>
+<p>data_with_dummies = pd.get_dummies(data) and add an additional argument drop first and set it to true. This additional argument will make sure no dummy is created for Audi. Let’s see how the new dataframe looks like.</p>
+<p>Good, we have successfully encoded all the categories. This is very convenient for us as we only needed one line of code to process all categorical features.</p>
+<p>Let’s go ahead and check the VIF of this new data frame with encoded categories. (pause).</p>
+<p>Nice! we dont see any high values for VIF, so no need to drop any more variables at this stage. So, let’s store this data frame in a new variable called data_pp, representing data preprocessed. Good! This completes the section on dummy variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_with_dummies</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">drop_first</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_with_dummies</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Mileage</th>
+      <th>EngineV</th>
+      <th>log_price</th>
+      <th>Brand_BMW</th>
+      <th>Brand_Mercedes-Benz</th>
+      <th>Brand_Mitsubishi</th>
+      <th>Brand_Renault</th>
+      <th>Brand_Toyota</th>
+      <th>Brand_Volkswagen</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>277</td>
+      <td>2.0</td>
+      <td>8.342840</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>427</td>
+      <td>2.9</td>
+      <td>8.974618</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>358</td>
+      <td>5.0</td>
+      <td>9.495519</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>240</td>
+      <td>4.2</td>
+      <td>10.043249</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>120</td>
+      <td>2.0</td>
+      <td>9.814656</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.outliers_influence</span><span class="w"> </span><span class="kn">import</span> <span class="n">variance_inflation_factor</span>
+
+<span class="n">variables</span> <span class="o">=</span> <span class="n">data_with_dummies</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;log_price&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">vif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">vif</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">variables</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])]</span>
+<span class="n">vif</span><span class="p">[</span><span class="s2">&quot;features&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">variables</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vif</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>VIF</th>
+      <th>features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.345535</td>
+      <td>Mileage</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.605830</td>
+      <td>EngineV</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2.002925</td>
+      <td>Brand_BMW</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2.320182</td>
+      <td>Brand_Mercedes-Benz</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.307777</td>
+      <td>Brand_Mitsubishi</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>1.322344</td>
+      <td>Brand_Renault</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.686401</td>
+      <td>Brand_Toyota</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>1.803406</td>
+      <td>Brand_Volkswagen</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_pp</span> <span class="o">=</span> <span class="n">data_with_dummies</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="linear-regression-model">
+<h1><span class="section-number">9. </span>Linear regression model<a class="headerlink" href="#linear-regression-model" title="Link to this heading">#</a></h1>
+<p>Let’s go ahead and build our regression model. As always, the first step is to declare the inputs and the targets. So, our target is the log_price column, while the inputs are all the columns except the log_price, which we can assign using the drop method.</p>
+<section id="declare-the-inputs-and-the-targets">
+<h2><span class="section-number">9.1. </span>Declare the inputs and the targets<a class="headerlink" href="#declare-the-inputs-and-the-targets" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targets</span> <span class="o">=</span> <span class="n">data_pp</span><span class="p">[</span><span class="s1">&#39;log_price&#39;</span><span class="p">]</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">data_pp</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;log_price&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="feature-scaling">
+<h2><span class="section-number">9.2. </span>Feature scaling<a class="headerlink" href="#feature-scaling" title="Link to this heading">#</a></h2>
+<p>Ok, now one common problem in working with numerical data is the difference in magnitudes. In our example, the values associated with mileage are on the order of 100s, while the values associated with the engine volume are between 0.6 and 6.3. In data science and machine learning, people tend to dislike this difference and hence tend to fix this issue by using a concept called Feature scaling or standardization.</p>
+<p>So what is feature scaling? It is the process of transforming the data we are working with into a standard scale. Specifically, this translates to taking individual input columns, and subtracting the mean and dividing by the standard deviation values. What this operation does is, regardless of the data sets, we will always obtain a distribution with a mean of zero and a standard deviation of 1 which could easily be proven. This operation forces figures of very different scales to appear similar.</p>
+<p>Here’s an activity for you: given the following dataset, obtain the transformed dataset by subtracting the mean and dividing by standard deviation values for each of the columns. Note that we will use sklearn to carry out feature scaling in practical cases, where sklearn uses the population standard deviation. Therefore, you can use the formula for the population standard deviation in your activity.</p>
+<p>Note that there are other strategies to deal with numerical data with different magnitudes. However, standardization is probably the most common one and is the one we will employ in the practical examples we will face in this course.</p>
+<p>Alright, it is time to standardize our practical dataset. We will use the sklearn’s standard scaler class to carry out feature scaling, and then proceed with regression.</p>
+<p>First, we need to import the relevant class. To do so, we write:
+from sklearn.preprocessing import StandardScaler (one word with captital Ss)</p>
+<p>We then create an object that belongs to the Standard scaler class. Let’s call this object scaler. We write:
+scaler = StandardScaler()</p>
+<p>This would create an empty object. There is no information in it as of now.</p>
+<p>In order to add information, we shall write: scaler.fit(inputs). This line will calculate the mean and the standard deviation of each feature. This information will be stored in the scaler object, so it won’t be an empty object anymore.</p>
+<p>We can then go ahead and apply the transformation to our inputs. To do so, we write: inputs_scaled = scaler.transform(inputs)
+This line of code transforms the unscaled inputs using the information contained in the scaler object.</p>
+<p>This is extremely important because whenever you get new data you will know that the standardization information is contained in the scaler. Thus you’ll be able to standardize the new data in the same way. This will be very useful later on for example, when you were given new data to predict, you can simply standardize this by writing scaler.transform(new_data). This will apply the same scaling mechanism that has been stored in the object scaler.</p>
+<p>Good, now let’s check what happened. (pause)</p>
+<p>We can clearly see that all the input data has been standardized. Note that even the dummy variables are standardized here. Note that some data scientists do not recommend to standardize dummy variables. But our purposes here, scaling the dummy variables has no effect on their predictive power, so it’s OK to leave it the way it is now.</p>
+<p>Alright, for now, that’s about it for feature scaling in data science.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
+<span class="n">scaler</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StandardScaler(copy=True, with_mean=True, with_std=True)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs_scaled</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inputs_scaled</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.2179077 , -0.47452478,  2.27971827, ..., -0.35463247,
+        -0.38447151, -0.52998841],
+       [ 2.78660201,  0.47359854, -0.43865069, ..., -0.35463247,
+        -0.38447151, -0.52998841],
+       [ 2.06500263,  2.68588629, -0.43865069, ..., -0.35463247,
+        -0.38447151, -0.52998841],
+       ..., 
+       [-1.58482613,  0.57894557, -0.43865069, ..., -0.35463247,
+        -0.38447151, -0.52998841],
+       [-1.66848982,  1.10568075,  2.27971827, ..., -0.35463247,
+        -0.38447151, -0.52998841],
+       [-0.38216049, -0.47452478, -0.43865069, ..., -0.35463247,
+        -0.38447151,  1.88683373]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="train-test-split">
+<h1><span class="section-number">10. </span>Train test split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h1>
+<p>Ok, let’s split our data into training and testing now.</p>
+<p>Let us import the train test split method from sklearn. (pause)</p>
+<p>Now, let x_train, x_test, y_train and u_test be equal to train_test_split brackets - The first argument refers to the X’s - So, write inputs_scaled and now the second argument refers to the Y’s - so, we write targets.</p>
+<p>Let us also set the test_size=0.2 so that we get a 80-20 split. We will also use a random state, so that if required, we can explore some tweaks to our model.</p>
+<p>OK we have created four new variables. The ones with a suffix train will be used to train the model, and those with a suffix test will be used to test it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">inputs_scaled</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alright, here’s an activity. Please go ahead and build a regression model using x_train as inputs and y_train as targets. You can then use a scatter plot to graph the predicted y values vs. the observed y values (contained in y_train). Visually inspect if your model is doing a good job.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Lectures/lecture_4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lecture_3/Lecture3_multiple_linear_regression.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Multiple linear regression</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Lecture4_Train_Test_Split.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>Train test split method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Import the relevant libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">5. Load the data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">6. Explore the descriptive statistics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-ols-assumptions">7. Check the OLS assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-1-linearity">7.1. Assumption 1: Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-2-homoscedasticity">7.2. Assumption 2: Homoscedasticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-3-autocorrelation">7.3. Assumption 3: Autocorrelation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-4-multicollinearity">7.4. Assumption 4: Multicollinearity</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dummy-variables">8. Create dummy variables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-model">9. Linear regression model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-inputs-and-the-targets">9.1. Declare the inputs and the targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">9.2. Feature scaling</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">10. Train test split</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
