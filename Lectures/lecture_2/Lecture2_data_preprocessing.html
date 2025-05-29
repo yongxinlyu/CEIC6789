@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data preprocessing example &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>Data preprocessing &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -60,6 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_2/Lecture2_data_preprocessing';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tutorial 1 - Introduction to Data Science" href="../../Tutorials/tutorial_1/tutorial1_info.html" />
+    <link rel="prev" title="Lecture 2 - Data Preprocessing" href="Lecture2_info.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -121,8 +123,6 @@
     <div class="bd-container__inner bd-page-width">
       
       
-      
-        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -186,12 +186,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Info/Resources.html">Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_1/Lecture1_info.html">Lecture 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="data_preprocessing_solutions.html">Data preprocessing</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data preprocessing</a></li>
 </ul>
 </details></li>
 </ul>
@@ -425,7 +425,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data preprocessing example</h1>
+    <h1>Data preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -465,8 +465,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing-example">
-<h1>Data preprocessing example<a class="headerlink" href="#data-preprocessing-example" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing">
+<h1>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h1>
 <section id="import-the-relevant-libraries">
 <h2>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -475,7 +475,7 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">seaborn</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sns</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -485,7 +485,9 @@ document.write(`
 <h2>Load the raw data<a class="headerlink" href="#load-the-raw-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;cheese_taste.xlsx&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#raw_data = pd.read_excel(&#39;cheese_taste.xlsx&#39;)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/yongxinlyu/CEIC6789/main/Lectures/lecture_2/cheese_taste.xlsx&quot;</span>
+<span class="n">raw_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">raw_data</span>
 </pre></div>
 </div>
@@ -795,12 +797,18 @@ document.write(`
 </section>
 <section id="explore-the-descriptive-statistics-of-the-variables">
 <h2>Explore the descriptive statistics of the variables<a class="headerlink" href="#explore-the-descriptive-statistics-of-the-variables" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">raw_data</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1517,7 +1525,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/1543214328.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2104/1543214328.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
@@ -1817,7 +1825,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/1051526947.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2104/1051526947.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1841,7 +1849,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/4228857375.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2104/4228857375.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1865,7 +1873,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/3527281904.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2104/3527281904.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1889,7 +1897,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/862876312.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2104/862876312.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1924,7 +1932,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2168/3229253560.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2104/3229253560.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1946,46 +1954,46 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 <p>Detailed information about box plots: <a class="reference external" href="https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51">https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/a5029ca07e1bbc9f29f47eb7c591da8d4d63b5b9ed5ee3f3be4431282187f39c.png" src="../../_images/a5029ca07e1bbc9f29f47eb7c591da8d4d63b5b9ed5ee3f3be4431282187f39c.png" />
+<img alt="../../_images/c43113f5d1c323cdd1a6666508f2572c12cfa3b1a5872b73b072e5b562bb80b1.png" src="../../_images/c43113f5d1c323cdd1a6666508f2572c12cfa3b1a5872b73b072e5b562bb80b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;H2S&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;H2S&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5437f184d71e7df5e834107050b77bc447dc20b30a5a5d4d013ad2c4d3812b56.png" src="../../_images/5437f184d71e7df5e834107050b77bc447dc20b30a5a5d4d013ad2c4d3812b56.png" />
+<img alt="../../_images/52778bfdf150e21f0d080dddf35737b6d2ecc23f396a762a6ef526851be46e07.png" src="../../_images/52778bfdf150e21f0d080dddf35737b6d2ecc23f396a762a6ef526851be46e07.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/367e058f58fb3e6c9a25c88e1375024f1a37a5e7d10b412f0f79406a8a4a8135.png" src="../../_images/367e058f58fb3e6c9a25c88e1375024f1a37a5e7d10b412f0f79406a8a4a8135.png" />
+<img alt="../../_images/6902e1391097b18d4e8df7dc714e059501b55eb24393757b48ecbf1e8e7a0c59.png" src="../../_images/6902e1391097b18d4e8df7dc714e059501b55eb24393757b48ecbf1e8e7a0c59.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Taste&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Taste&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c0267b0abba60d9ca0bd9d975017595d5398efed05dd488186bb8b4666adb2e8.png" src="../../_images/c0267b0abba60d9ca0bd9d975017595d5398efed05dd488186bb8b4666adb2e8.png" />
+<img alt="../../_images/598fc697d024a5454d64ddb828ec5502865b6c2980b16b9f36496d0ef41c3afe.png" src="../../_images/598fc697d024a5454d64ddb828ec5502865b6c2980b16b9f36496d0ef41c3afe.png" />
 </div>
 </div>
 </section>
@@ -2006,13 +2014,13 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_ol_m2</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_ol_m2</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/046c88384a2df2ad538a9f393a759b4d4dbbe3b44b188c210a379abef3a273d0.png" src="../../_images/046c88384a2df2ad538a9f393a759b4d4dbbe3b44b188c210a379abef3a273d0.png" />
+<img alt="../../_images/0d20c3fd32b385bec10bb83fa75ec7e1b9183ae795dedf319626d3832b702b9a.png" src="../../_images/0d20c3fd32b385bec10bb83fa75ec7e1b9183ae795dedf319626d3832b702b9a.png" />
 </div>
 </div>
 </section>
@@ -2315,6 +2323,24 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Lecture2_info.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Lecture 2 - Data Preprocessing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../Tutorials/tutorial_1/tutorial1_info.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Tutorial 1 - Introduction to Data Science</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

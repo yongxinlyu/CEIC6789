@@ -4,4 +4,4 @@
 
 [Watch here](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
 
-[📄 Download the PDF slides](Lecture1_notes.pdf)
+[📄 Download the lecture notes (PDF)](Lecture1_notes.pdf)
