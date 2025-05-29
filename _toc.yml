@@ -15,7 +15,7 @@ parts:
 - caption: Lectures
   numbered: true
   chapters:
-#  - file: Lectures/lecture_1/Lecture1_notes
+#  - file: Lectures/lecture_1/name_of_jupyter_notebook_here
   - file: Lectures/lecture_2/data_preprocessing_solutions
   - file: Lectures/lecture_3/Lecture3_simple_linear_regression
   - file: Lectures/lecture_3/Lecture3_multiple_linear_regression
