@@ -13,20 +13,16 @@ parts:
   - file: Info/Resources
 
 - caption: Lectures
-  numbered: true
+  numbered: false
   chapters:
-    - title: Lecture 1 - Introduction to Data Science
-      sections:
-      - file: Lectures/lecture_1/name_of_jupyter_notebook_here
-      - file: Lectures/lecture_1/Lecture1_notes
-      - file: Lectures/lecture_1/Lecture1_video
+  - file: Lectures/lecture_1/Lecture1_info
+    sections:
+    - file: Lectures/lecture_1/name_of_jupyter_notebook_here
 
-    - title: Lecture 2 - Data Preprocessing
-      sections:
-      - file: Lectures/lecture_2/data_preprocessing_solutions
-      - file: Lectures/lecture_2/lecture2-slides
-
-
+  - file: Lectures/lecture_2/Lecture2_info
+    sections:  
+    - file: Lectures/lecture_2/data_preprocessing_solutions
+ 
 #  - file: Lectures/lecture_1/name_of_jupyter_notebook_here
 #  - file: Lectures/lecture_2/data_preprocessing_solutions
 #  - file: Lectures/lecture_3/Lecture3_simple_linear_regression
@@ -37,12 +33,12 @@ parts:
 #  - file: Lectures/lecture_5/Lecture5_multiple_logistic_regression
 
 - caption: Tutorials
-  numbered: true
+  numbered: false
   chapters:
-    - title: Tutorial 1 - Introduction to Data Science
-      sections:
-      - file: Tutorials/tutorial_1/Week1_tutorial_part1
-      - file: Tutorials/tutorial_1/Week1_tutorial_part1_solutions
-      - file: Tutorials/tutorial_1/Week1_tutorial_part2
-      - file: Tutorials/tutorial_1/Week1_tutorial_part2_solutions
+  - file: Tutorials/tutorial_1/tutorial1_info
+    sections:
+    - file: Tutorials/tutorial_1/Week1_tutorial_part1
+    - file: Tutorials/tutorial_1/Week1_tutorial_part1_solutions
+    - file: Tutorials/tutorial_1/Week1_tutorial_part2
+    - file: Tutorials/tutorial_1/Week1_tutorial_part2_solutions
 
