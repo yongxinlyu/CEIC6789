@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CEIC6789 &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>📘 Contributing to the Course Jupyter Book &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'README';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'CONTRIBUTING';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -274,7 +274,7 @@
       
       
       
-      <li><a href="_sources/README.md" target="_blank"
+      <li><a href="_sources/CONTRIBUTING.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +358,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CEIC6789</h1>
+    <h1>📘 Contributing to the Course Jupyter Book</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -368,7 +368,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">🧑‍💻 Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">📁 Project Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-new-lecture-or-tutorial">➕ How to Add a New Lecture or Tutorial</a></li>
 </ul>
             </nav>
         </div>
@@ -380,14 +381,53 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="ceic6789">
-<h1>CEIC6789<a class="headerlink" href="#ceic6789" title="Link to this heading">#</a></h1>
-<p>Online resource for
-Data-driven Decision Making in Chemical Engineeringand Food Science
-at UNSW (CEIC6789)</p>
-<section id="contributing">
-<h2>🧑‍💻 Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
-<p>Want to add new tutorials or lectures? See <a class="reference internal" href="CONTRIBUTING.html"><span class="std std-doc">CONTRIBUTING.md</span></a> for guidelines on how to update <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and organize content.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="contributing-to-the-course-jupyter-book">
+<h1>📘 Contributing to the Course Jupyter Book<a class="headerlink" href="#contributing-to-the-course-jupyter-book" title="Link to this heading">#</a></h1>
+<p>Thank you for helping improve this course! This guide explains how to add or update content in the Jupyter Book.</p>
+<hr class="docutils" />
+<section id="project-structure">
+<h2>📁 Project Structure<a class="headerlink" href="#project-structure" title="Link to this heading">#</a></h2>
+<p>The repository is organized as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Info/</span></code> — Course info pages (overview, learning objectives, resources)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Lectures/lecture_X/</span></code> — Lecture materials grouped by lecture number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Tutorials/tutorial_X/</span></code> — Tutorials grouped by tutorial number</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="how-to-add-a-new-lecture-or-tutorial">
+<h2>➕ How to Add a New Lecture or Tutorial<a class="headerlink" href="#how-to-add-a-new-lecture-or-tutorial" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Create a new folder</strong> in the appropriate directory:</p>
+<ul class="simple">
+<li><p>Example: <code class="docutils literal notranslate"><span class="pre">Lectures/lecture_3/</span></code> or <code class="docutils literal notranslate"><span class="pre">Tutorials/tutorial_2/</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>Add an info Markdown file</strong>:</p>
+<ul class="simple">
+<li><p>Name it like <code class="docutils literal notranslate"><span class="pre">Lecture3_info.md</span></code> or <code class="docutils literal notranslate"><span class="pre">tutorial2_info.md</span></code></p></li>
+<li><p>Include a short description, and links to the PDF slides and video (if available)</p></li>
+</ul>
+</li>
+<li><p><strong>Add your notebooks</strong>:</p>
+<ul class="simple">
+<li><p>Place relevant <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files in the same folder</p></li>
+<li><p>Add slide PDFs (<code class="docutils literal notranslate"><span class="pre">.pdf</span></code>) or video embed <code class="docutils literal notranslate"><span class="pre">.md</span></code> files as needed</p></li>
+</ul>
+</li>
+<li><p><strong>Update <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code></strong>:</p>
+<ul class="simple">
+<li><p>Reference each file using relative paths <strong>without extensions</strong> (<code class="docutils literal notranslate"><span class="pre">.md</span></code> or <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>)</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">sections:</span></code> to group notebooks under the main info file</p></li>
+</ul>
+<h3 class="rubric" id="example-entry-in-toc-yml">Example entry in <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>:</h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lectures/lecture_3/Lecture3_info</span>
+<span class="w">  </span><span class="nt">sections</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Lectures/lecture_3/Lecture3_notebook</span>
+</pre></div>
+</div>
+</li>
+</ol>
 </section>
 </section>
 
@@ -437,7 +477,8 @@ at UNSW (CEIC6789)</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">🧑‍💻 Contributing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#project-structure">📁 Project Structure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-add-a-new-lecture-or-tutorial">➕ How to Add a New Lecture or Tutorial</a></li>
 </ul>
   </nav></div>
 
