@@ -15,12 +15,13 @@ parts:
 - caption: Lectures
   numbered: true
   chapters:
-    - title: Lecture 1: Introduction to Data Science
+    - title: Lecture 1 - Introduction to Data Science
       sections:
       - file: Lectures/lecture_1/name_of_jupyter_notebook_here
       - file: Lectures/lecture_1/Lecture1_notes
+      - file: Lectures/lecture_1/Lecture1_video
 
-    - title: Lecture 2: Data Preprocessing
+    - title: Lecture 2 - Data Preprocessing
       sections:
       - file: Lectures/lecture_2/data_preprocessing_solutions
       - file: Lectures/lecture_2/lecture2-slides
@@ -38,7 +39,7 @@ parts:
 - caption: Tutorials
   numbered: true
   chapters:
-    - title: Tutorial 1: Introduction to Data Science
+    - title: Tutorial 1 - Introduction to Data Science
       sections:
       - file: Tutorials/tutorial_1/Week1_tutorial_part1
       - file: Tutorials/tutorial_1/Week1_tutorial_part1_solutions
