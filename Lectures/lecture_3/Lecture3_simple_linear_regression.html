@@ -1116,6 +1116,40 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <img alt="../../_images/651dd28d695de77ae97fa865f6a11680c69e75aa7241bcf2185f69546d892549.png" src="../../_images/651dd28d695de77ae97fa865f6a11680c69e75aa7241bcf2185f69546d892549.png" />
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+
+<span class="n">x_sorted</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">x_mat</span><span class="p">))</span>
+<span class="n">yhat</span> <span class="o">=</span> <span class="n">x_sorted</span> <span class="o">*</span> <span class="mf">2.6781</span> <span class="o">+</span> <span class="mf">12.2295</span>
+
+<span class="c1"># Scatter plot of original data</span>
+<span class="n">scatter</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Data Points&#39;</span><span class="p">)</span>
+
+<span class="c1"># Regression line</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_sorted</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">yhat</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span>
+                  <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Regression Line&#39;</span><span class="p">)</span>
+
+<span class="c1"># Combine both in a figure</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">scatter</span><span class="p">,</span> <span class="n">line</span><span class="p">])</span>
+
+<span class="c1"># Add axis labels and formatting</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>         <span class="c1"># Width in pixels</span>
+    <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>        <span class="c1"># Height in pixels</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Size&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Efficiency&#39;</span><span class="p">,</span>
+    <span class="n">font</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">18</span><span class="p">),</span>
+    <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
 </section>
 <section id="r-squared">
 <h3><span class="section-number">2.3.7. </span>R-squared<a class="headerlink" href="#r-squared" title="Link to this heading">#</a></h3>
@@ -1195,8 +1229,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/sklearn/utils/validation.py:2732: UserWarning: X has feature names, but LinearRegression was fitted without feature names
-  warnings.warn(
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/sklearn/utils/validation.py:2732: UserWarning:
+
+X has feature names, but LinearRegression was fitted without feature names
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([79.18313499, 92.57385955])
@@ -1212,8 +1247,9 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/sklearn/utils/validation.py:2732: UserWarning: X has feature names, but LinearRegression was fitted without feature names
-  warnings.warn(
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/sklearn/utils/validation.py:2732: UserWarning:
+
+X has feature names, but LinearRegression was fitted without feature names
 </pre></div>
 </div>
 <div class="output text_html"><div>
