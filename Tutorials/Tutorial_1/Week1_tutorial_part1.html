@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Train test split method &#8212; CEIC6789</title>
+    <title>Week 1 tutorial: Python basics &#8212; CEIC6789</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_4/Lecture4_Train_Test_Split';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Tutorial_1/Week1_tutorial_part1';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="12. Logistic regression" href="../lecture_5/Lecture5_logistic_regression.html" />
-    <link rel="prev" title="4. Import the relevant libraries" href="Lecture4_multiple_linear_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -186,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Details/Resources.html">Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_4/Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
 
 
 
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_4/Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
 </ul>
 
     </div>
@@ -269,7 +269,7 @@
       
       
       
-      <li><a href="../../_sources/Lectures/lecture_4/Lecture4_Train_Test_Split.ipynb" target="_blank"
+      <li><a href="../../_sources/Tutorials/Tutorial_1/Week1_tutorial_part1.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Train test split method</h1>
+    <h1>Week 1 tutorial: Python basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,10 +363,24 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">11.1. Import relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">11.2. Generate data we are going to split</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">11.3. Split the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">11.4. Explore the result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdowns-in-jupyter">1. Markdowns in Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">2. Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers-and-boolean-values">3. Numbers and Boolean Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">4. Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">5. Arithmetic operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reassign-values">6. Reassign Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-comments">7. Add comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-continuation">8. Line Continuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">9. Comparison Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">10. IF statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">11. IF-ELSE Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-if-and-else-statement">12. IF - ELSE IF and ELSE Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">13. Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">14. Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-dictionaries">15. Tuples and Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">16. For Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditional-statements-and-loops-together">17. Use Conditional Statements and Loops Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-out-some-important-built-in-functions-in-python">18. Check out some important built-in functions in Python</a></li>
 </ul>
             </nav>
         </div>
@@ -378,158 +392,112 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="train-test-split-method">
-<h1><span class="section-number">11. </span>Train test split method<a class="headerlink" href="#train-test-split-method" title="Link to this heading">#</a></h1>
-<section id="import-relevant-libraries">
-<h2><span class="section-number">11.1. </span>Import relevant libraries<a class="headerlink" href="#import-relevant-libraries" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
-</pre></div>
-</div>
-</div>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="week-1-tutorial-python-basics">
+<h1>Week 1 tutorial: Python basics<a class="headerlink" href="#week-1-tutorial-python-basics" title="Link to this heading">#</a></h1>
+<p>Please note that there are several different ways to solve a problem in python. The ones suggested below are one way of doing them. If you prefer to solve them in another way, please feel free.</p>
+<section id="markdowns-in-jupyter">
+<h2>1. Markdowns in Jupyter<a class="headerlink" href="#markdowns-in-jupyter" title="Link to this heading">#</a></h2>
+<p>Create four different markdowns using #, ##, ### and no # symbols. This will be useful to write headings when you start coding.</p>
 </section>
-<section id="generate-data-we-are-going-to-split">
-<h2><span class="section-number">11.2. </span>Generate data we are going to split<a class="headerlink" href="#generate-data-we-are-going-to-split" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,
-        14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,
-        27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,
-        40,  41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,
-        53,  54,  55,  56,  57,  58,  59,  60,  61,  62,  63,  64,  65,
-        66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,  78,
-        79,  80,  81,  82,  83,  84,  85,  86,  87,  88,  89,  90,  91,
-        92,  93,  94,  95,  96,  97,  98,  99, 100])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span><span class="mi">501</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413,
-       414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426,
-       427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439,
-       440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452,
-       453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465,
-       466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478,
-       479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491,
-       492, 493, 494, 495, 496, 497, 498, 499, 500])
-</pre></div>
-</div>
-</div>
-</div>
+<section id="variables">
+<h2>2. Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
+<p>Create a variable with name “x” and assign a value of 20</p>
+<p>Now print the value of “x”</p>
+<p>Is there a second way to obtain the same result?</p>
+<p>Create three new variables: x, y and z that are equal to 10, 20 and 30, respectively, on the same line (not individually as before)</p>
+<p>Print the value of z</p>
 </section>
-<section id="split-the-data">
-<h2><span class="section-number">11.3. </span>Split the data<a class="headerlink" href="#split-the-data" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span><span class="p">,</span> <span class="n">a_test</span><span class="p">,</span> <span class="n">b_train</span><span class="p">,</span> <span class="n">b_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="numbers-and-boolean-values">
+<h2>3. Numbers and Boolean Values<a class="headerlink" href="#numbers-and-boolean-values" title="Link to this heading">#</a></h2>
+<p>Create a variable that is equal to “True”</p>
+<p>Check its type</p>
+<p>Create a variable equal to 12</p>
+<p>Check its type</p>
+<p>Check the type of the value 12.04</p>
+<p>Turn the variable equal to 12 into a float</p>
 </section>
-<section id="explore-the-result">
-<h2><span class="section-number">11.4. </span>Explore the result<a class="headerlink" href="#explore-the-result" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">a_test</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((80,), (20,))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
-       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
-       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
-       52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
-       69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 81,  82,  83,  84,  85,  86,  87,  88,  89,  90,  91,  92,  93,
-        94,  95,  96,  97,  98,  99, 100])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_train</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413,
-       414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426,
-       427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439,
-       440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452,
-       453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465,
-       466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478,
-       479, 480])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493,
-       494, 495, 496, 497, 498, 499, 500])
-</pre></div>
-</div>
-</div>
-</div>
+<section id="strings">
+<h2>4. Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h2>
+<p>Assign the value of 6789 to the variable “a”</p>
+<p>Using the variable “a”, write a line of code where the output after executuion would be <em>CEIC6789</em>.</p>
+</section>
+<section id="arithmetic-operators">
+<h2>5. Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Link to this heading">#</a></h2>
+<p>Add 20 and 30, and set the value to a variable. Then print that variable.</p>
+<p>Divide 25 by 3, and set the value to a variable. Then print that variable.</p>
+</section>
+<section id="reassign-values">
+<h2>6. Reassign Values<a class="headerlink" href="#reassign-values" title="Link to this heading">#</a></h2>
+<p>Multiply 5 with 3, and assign the result to a variable “c”, and print “c”</p>
+<p>Now assign 25 to the same variable “c”, and print “c”</p>
+<p>Observe how the value of “c” is always the last one you have assigned</p>
+</section>
+<section id="add-comments">
+<h2>7. Add comments<a class="headerlink" href="#add-comments" title="Link to this heading">#</a></h2>
+<p>Add a comment saying you are going to print 100 and then in the same cell print 100</p>
+</section>
+<section id="line-continuation">
+<h2>8. Line Continuation<a class="headerlink" href="#line-continuation" title="Link to this heading">#</a></h2>
+<p>Add a backslash in the code below, so it is a one-line code. Observe the change in the result.</p>
+</section>
+<section id="comparison-operators">
+<h2>9. Comparison Operators<a class="headerlink" href="#comparison-operators" title="Link to this heading">#</a></h2>
+<p>Verify that 5 is smaller than 10</p>
+<p>Verify that 3 multiplied by 2 is equal to 6</p>
+<p>Verify that 10 is not equal to 5</p>
+</section>
+<section id="if-statement">
+<h2>10. IF statement<a class="headerlink" href="#if-statement" title="Link to this heading">#</a></h2>
+<p>Create a code that prints “You might be in the right course!” if a variable “course” is assigned a value 6789</p>
+<p>Now, create a code that prints “You are in the right course!” if a variable “course” is assigned a value 6789 and if a variable “title” is assigned a string “CEIC”</p>
+</section>
+<section id="if-else-statement">
+<h2>11. IF-ELSE Statement<a class="headerlink" href="#if-else-statement" title="Link to this heading">#</a></h2>
+<p>Now, create a code that prints “You are in the right course!” if a variable “course” is assigned a value 6789 and if a variable “title” is assigned a string “CEIC”. If not, the code should print “You are in the wrong course!”</p>
+</section>
+<section id="if-else-if-and-else-statement">
+<h2>12. IF - ELSE IF and ELSE Statement<a class="headerlink" href="#if-else-if-and-else-statement" title="Link to this heading">#</a></h2>
+<p>Now, create a code that prints “You are in the right course!” if a variable “course” is assigned a value 6789 and if a variable “title” is assigned a string “CEIC”. If one of these conditions is satisfied, then the code should print “You might be in the right course!”. If not, the code should print “You are in the wrong course!”</p>
+</section>
+<section id="functions">
+<h2>13. Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h2>
+<p>Write a function that calculates the average of three numbers, and prints the result.</p>
+</section>
+<section id="lists">
+<h2>14. Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h2>
+<p>Create a list, called “Numbers”. Let it contain the numbers 10, 25, 40, and 50.</p>
+<p>Print the element at index 2 from the list.</p>
+<p>Print the 0th element.</p>
+<p>With the help of the “append method”, add the number 100 to the list.</p>
+<p>With the help of the “extend method”, add the numbers 115 and 140 to the list.</p>
+</section>
+<section id="tuples-and-dictionaries">
+<h2>15. Tuples and Dictionaries<a class="headerlink" href="#tuples-and-dictionaries" title="Link to this heading">#</a></h2>
+<p>Self-learning: Please understand what tuples and dictionaries are, and try to solve some examples.</p>
+</section>
+<section id="for-loops">
+<h2>16. For Loops<a class="headerlink" href="#for-loops" title="Link to this heading">#</a></h2>
+<p>Create a For loop that prints every digit in the list [0,1,2,3,4,5] on a new line.</p>
+<p>Now do the same using the range function</p>
+<p>Learn more about the range function. It is quite useful.</p>
+</section>
+<section id="use-conditional-statements-and-loops-together">
+<h2>17. Use Conditional Statements and Loops Together<a class="headerlink" href="#use-conditional-statements-and-loops-together" title="Link to this heading">#</a></h2>
+<p>Create a code that runs a loop over all values from 1 to 10. Let it print all Odd numbers, and in the place of the even numbers, it should print “Even”. Let the output be printed on a single line.</p>
+<p>Tips:
+Help yourself with the range() function to solve this exercise.
+Use the end argument in the print function.</p>
+</section>
+<section id="check-out-some-important-built-in-functions-in-python">
+<h2>18. Check out some important built-in functions in Python<a class="headerlink" href="#check-out-some-important-built-in-functions-in-python" title="Link to this heading">#</a></h2>
+<p>Obtain the maximum and minimum number among the values 12, 60, 1555, and 2.</p>
+<p>Find the absolute value of -124</p>
+<p>Round the values of 33.2 and 33.7</p>
+<p>Round 33.52647 to the second digit.</p>
+<p>Find the sum of all elements in the provided list, called “Numbers”.
+Numbers = [1, 5, 64, 24.5]</p>
+<p>Use a built-in function to raise 10 to the power of 3.</p>
+<p>How many characters are there in the word “CEIC6789”?</p>
 </section>
 </section>
 
@@ -546,7 +514,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Lectures/lecture_4"
+            path: "./Tutorials/Tutorial_1"
         },
         predefinedOutput: true
     }
@@ -563,24 +531,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Lecture4_multiple_linear_regression.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Import the relevant libraries</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../lecture_5/Lecture5_logistic_regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Logistic regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -597,10 +547,24 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">11.1. Import relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">11.2. Generate data we are going to split</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">11.3. Split the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">11.4. Explore the result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdowns-in-jupyter">1. Markdowns in Jupyter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variables">2. Variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numbers-and-boolean-values">3. Numbers and Boolean Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">4. Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arithmetic-operators">5. Arithmetic operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reassign-values">6. Reassign Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-comments">7. Add comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#line-continuation">8. Line Continuation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-operators">9. Comparison Operators</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-statement">10. IF statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-statement">11. IF-ELSE Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-else-if-and-else-statement">12. IF - ELSE IF and ELSE Statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">13. Functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lists">14. Lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tuples-and-dictionaries">15. Tuples and Dictionaries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-loops">16. For Loops</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditional-statements-and-loops-together">17. Use Conditional Statements and Loops Together</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#check-out-some-important-built-in-functions-in-python">18. Check out some important built-in functions in Python</a></li>
 </ul>
   </nav></div>
 

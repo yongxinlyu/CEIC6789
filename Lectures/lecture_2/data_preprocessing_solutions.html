@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Data preprocessing example &#8212; My sample book</title>
+    <title>1. Data preprocessing &#8212; CEIC6789</title>
   
   
   
@@ -153,8 +153,8 @@
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="CEIC6789 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="CEIC6789 - Home"/>`);</script>
   
   
 </a></div>
@@ -187,7 +187,7 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Data preprocessing example</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Data preprocessing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../lecture_4/Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
@@ -243,50 +243,18 @@
 <div class="article-header-buttons">
 
 
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
+<a href="https://github.com/yongxinlyu/CEIC6789" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
    title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLectures/lecture_2/data_preprocessing_solutions.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
 
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
 </a>
-</li>
-      
-  </ul>
-</div>
 
 
 
@@ -385,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Data preprocessing example</h1>
+    <h1>Data preprocessing</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,8 +394,8 @@ document.write(`
                 <article class="bd-article">
                   
   <p><a class="reference download internal" download="" href="../../_downloads/3cb1657b35324240c836618eb86c0dee/Lecture2_notes.pdf"><span class="xref download myst">📄 Download lecture notes (PDF)</span></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing-example">
-<h1><span class="section-number">1. </span>Data preprocessing example<a class="headerlink" href="#data-preprocessing-example" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing">
+<h1><span class="section-number">1. </span>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h1>
 <section id="import-the-relevant-libraries">
 <h2><span class="section-number">1.1. </span>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -1179,9 +1147,9 @@ dtype: int64
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_no_mv_m2</span> <span class="o">=</span> <span class="n">data_interest</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Imputer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.impute</span><span class="w"> </span><span class="kn">import</span> <span class="n">SimpleImputer</span>
 
-<span class="n">imp</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="n">imp</span> <span class="o">=</span> <span class="n">SimpleImputer</span><span class="p">(</span><span class="n">missing_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 <span class="n">lactic</span> <span class="o">=</span> <span class="n">data_interest</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">data_no_mv_m2</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">imp</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">lactic</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
 <span class="n">data_no_mv_m2</span>
@@ -1189,18 +1157,275 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">data_no_mv_m2</span> <span class="o">=</span> <span class="n">data_interest</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Imputer</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">imp</span> <span class="o">=</span> <span class="n">Imputer</span><span class="p">(</span><span class="n">missing_values</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">lactic</span> <span class="o">=</span> <span class="n">data_interest</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ImportError</span>: cannot import name &#39;Imputer&#39; from &#39;sklearn.preprocessing&#39; (/opt/hostedtoolcache/Python/3.10.17/x64/lib/python3.10/site-packages/sklearn/preprocessing/__init__.py)
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Acetic</th>
+      <th>Animal</th>
+      <th>H2S</th>
+      <th>Lactic</th>
+      <th>Taste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>4.543</td>
+      <td>sheep</td>
+      <td>3.135</td>
+      <td>0.860000</td>
+      <td>12.30</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5.159</td>
+      <td>sheep</td>
+      <td>5.043</td>
+      <td>1.530000</td>
+      <td>20.90</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.366</td>
+      <td>cow</td>
+      <td>5.438</td>
+      <td>1.570000</td>
+      <td>39.00</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>5.759</td>
+      <td>sheep</td>
+      <td>7.496</td>
+      <td>1.810000</td>
+      <td>47.90</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4.663</td>
+      <td>cow</td>
+      <td>3.807</td>
+      <td>0.990000</td>
+      <td>5.60</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5.697</td>
+      <td>goat</td>
+      <td>7.601</td>
+      <td>1.090000</td>
+      <td>25.90</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.892</td>
+      <td>cow</td>
+      <td>8.726</td>
+      <td>1.290000</td>
+      <td>37.30</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6.078</td>
+      <td>cow</td>
+      <td>7.966</td>
+      <td>1.780000</td>
+      <td>21.90</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>4.898</td>
+      <td>sheep</td>
+      <td>3.850</td>
+      <td>1.290000</td>
+      <td>18.10</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>5.242</td>
+      <td>sheep</td>
+      <td>4.174</td>
+      <td>1.580000</td>
+      <td>21.00</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>5.740</td>
+      <td>goat</td>
+      <td>6.142</td>
+      <td>1.680000</td>
+      <td>34.90</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6.446</td>
+      <td>goat</td>
+      <td>7.908</td>
+      <td>1.900000</td>
+      <td>57.20</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>4.477</td>
+      <td>sheep</td>
+      <td>2.996</td>
+      <td>1.477037</td>
+      <td>0.70</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>5.236</td>
+      <td>sheep</td>
+      <td>4.942</td>
+      <td>1.300000</td>
+      <td>25.90</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>6.151</td>
+      <td>NaN</td>
+      <td>6.752</td>
+      <td>1.520000</td>
+      <td>54.90</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>6.365</td>
+      <td>sheep</td>
+      <td>9.588</td>
+      <td>1.740000</td>
+      <td>40.90</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>4.787</td>
+      <td>cow</td>
+      <td>3.912</td>
+      <td>1.477037</td>
+      <td>15.90</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>15.213</td>
+      <td>goat</td>
+      <td>4.700</td>
+      <td>1.490000</td>
+      <td>6.40</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>5.247</td>
+      <td>sheep</td>
+      <td>6.174</td>
+      <td>1.630000</td>
+      <td>18.00</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.438</td>
+      <td>NaN</td>
+      <td>9.064</td>
+      <td>1.990000</td>
+      <td>38.90</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>4.564</td>
+      <td>goat</td>
+      <td>4.949</td>
+      <td>1.477037</td>
+      <td>14.00</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5.298</td>
+      <td>sheep</td>
+      <td>5.220</td>
+      <td>1.330000</td>
+      <td>15.20</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>5.455</td>
+      <td>goat</td>
+      <td>9.242</td>
+      <td>1.440000</td>
+      <td>32.00</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>5.855</td>
+      <td>sheep</td>
+      <td>10.199</td>
+      <td>2.000000</td>
+      <td>56.71</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>5.366</td>
+      <td>goat</td>
+      <td>3.664</td>
+      <td>1.310000</td>
+      <td>16.80</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>12.052</td>
+      <td>cow</td>
+      <td>3.219</td>
+      <td>1.460000</td>
+      <td>11.60</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>6.458</td>
+      <td>sheep</td>
+      <td>6.962</td>
+      <td>1.720000</td>
+      <td>26.50</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>5.328</td>
+      <td>cow</td>
+      <td>3.912</td>
+      <td>1.250000</td>
+      <td>0.70</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>5.802</td>
+      <td>goat</td>
+      <td>6.685</td>
+      <td>1.080000</td>
+      <td>13.40</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>6.176</td>
+      <td>cow</td>
+      <td>4.787</td>
+      <td>1.250000</td>
+      <td>5.50</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 <section id="method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables">
@@ -1221,18 +1446,27 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1988/1543214328.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
-    .dataframe thead th {
-        text-align: left;
+For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
+
+
+  data_no_mv_m4[&#39;Animal&#39;].fillna(mf_animal, inplace=True)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -1512,7 +1746,20 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cf1a28fbfee4a005c141fbf37577cbb0f40b5b6e013b3150ff3cd537ad6f30b6.png" src="../../_images/cf1a28fbfee4a005c141fbf37577cbb0f40b5b6e013b3150ff3cd537ad6f30b6.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1988/1051526947.py:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(data_no_mv[&#39;Acetic&#39;])
+</pre></div>
+</div>
+<img alt="../../_images/4b9cf4df9f22f1fba434a9aca8a65756cda016fa4cb8f828f21e23eb39488e89.png" src="../../_images/4b9cf4df9f22f1fba434a9aca8a65756cda016fa4cb8f828f21e23eb39488e89.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1523,7 +1770,20 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e9760ac59cbef5bfa9f02a71f82109deb830a4050f41f3bb6b5de8f7d4dd47b4.png" src="../../_images/e9760ac59cbef5bfa9f02a71f82109deb830a4050f41f3bb6b5de8f7d4dd47b4.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1988/4228857375.py:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(data_no_mv[&#39;H2S&#39;])
+</pre></div>
+</div>
+<img alt="../../_images/14dd78608ceb21caa94cbf355433b3341f5b96c8eeca29e009cdef773287280d.png" src="../../_images/14dd78608ceb21caa94cbf355433b3341f5b96c8eeca29e009cdef773287280d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1534,7 +1794,20 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3033f3465275d25c543ea808e969bb1342122515549a06eb825c421ea4bafef7.png" src="../../_images/3033f3465275d25c543ea808e969bb1342122515549a06eb825c421ea4bafef7.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1988/3527281904.py:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(data_no_mv[&#39;Lactic&#39;])
+</pre></div>
+</div>
+<img alt="../../_images/3eb274a9b44f35cdbea64269ccb19bf29a5d2cf4e6bb40493d19ee6f19325272.png" src="../../_images/3eb274a9b44f35cdbea64269ccb19bf29a5d2cf4e6bb40493d19ee6f19325272.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1545,7 +1818,20 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ba73a0fd444b86b262a41b735bcfa00442eabaf78e1558a0d4f10c41c296137c.png" src="../../_images/ba73a0fd444b86b262a41b735bcfa00442eabaf78e1558a0d4f10c41c296137c.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1988/862876312.py:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(data_no_mv[&#39;Taste&#39;])
+</pre></div>
+</div>
+<img alt="../../_images/4bc278bd7f8aa88f91a6e1eb28a990602c7f3774ebcc7ea1f0f7f8626a66a57e.png" src="../../_images/4bc278bd7f8aa88f91a6e1eb28a990602c7f3774ebcc7ea1f0f7f8626a66a57e.png" />
 </div>
 </div>
 </section>
@@ -1567,7 +1853,20 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/857ed50a7cc2d179531f6d0f7ec1c3e855a3188691f5365cd6b7303ff172d145.png" src="../../_images/857ed50a7cc2d179531f6d0f7ec1c3e855a3188691f5365cd6b7303ff172d145.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_1988/3229253560.py:1: UserWarning: 
+
+`distplot` is a deprecated function and will be removed in seaborn v0.14.0.
+
+Please adapt your code to use either `displot` (a figure-level function with
+similar flexibility) or `histplot` (an axes-level function for histograms).
+
+For a guide to updating your code to use the new functions, please see
+https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
+
+  sns.distplot(data_no_ol_m1[&#39;Acetic&#39;])
+</pre></div>
+</div>
+<img alt="../../_images/7b14850c896a468e7fc56fe884206e2881ce07ff1875725d0a386ae2d0ebfaa9.png" src="../../_images/7b14850c896a468e7fc56fe884206e2881ce07ff1875725d0a386ae2d0ebfaa9.png" />
 </div>
 </div>
 </section>
@@ -1576,46 +1875,46 @@ dtype: int64
 <p>Detailed information about box plots: <a class="reference external" href="https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51">https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b18c66e352ad8cda10eb60551e92b7bf69689e4917056d95e515dc0f676738bd.png" src="../../_images/b18c66e352ad8cda10eb60551e92b7bf69689e4917056d95e515dc0f676738bd.png" />
+<img alt="../../_images/c43113f5d1c323cdd1a6666508f2572c12cfa3b1a5872b73b072e5b562bb80b1.png" src="../../_images/c43113f5d1c323cdd1a6666508f2572c12cfa3b1a5872b73b072e5b562bb80b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;H2S&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;H2S&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5432c6b86c416253be78e5fa6d63646f47cd4408d506aacc3aa7a9dd0ff73c35.png" src="../../_images/5432c6b86c416253be78e5fa6d63646f47cd4408d506aacc3aa7a9dd0ff73c35.png" />
+<img alt="../../_images/52778bfdf150e21f0d080dddf35737b6d2ecc23f396a762a6ef526851be46e07.png" src="../../_images/52778bfdf150e21f0d080dddf35737b6d2ecc23f396a762a6ef526851be46e07.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Lactic&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4e39356ac96c7d8bb75434a16308ba14b3e4466354f1cee9e75aca507a63c6e0.png" src="../../_images/4e39356ac96c7d8bb75434a16308ba14b3e4466354f1cee9e75aca507a63c6e0.png" />
+<img alt="../../_images/6902e1391097b18d4e8df7dc714e059501b55eb24393757b48ecbf1e8e7a0c59.png" src="../../_images/6902e1391097b18d4e8df7dc714e059501b55eb24393757b48ecbf1e8e7a0c59.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Taste&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Taste&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d142e28a2c7aa1b81e35978a99a26ab641d1622753c7c1e39b4922d29652b7cf.png" src="../../_images/d142e28a2c7aa1b81e35978a99a26ab641d1622753c7c1e39b4922d29652b7cf.png" />
+<img alt="../../_images/598fc697d024a5454d64ddb828ec5502865b6c2980b16b9f36496d0ef41c3afe.png" src="../../_images/598fc697d024a5454d64ddb828ec5502865b6c2980b16b9f36496d0ef41c3afe.png" />
 </div>
 </div>
 </section>
@@ -1636,13 +1935,13 @@ dtype: int64
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">data_no_ol_m2</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">data_no_ol_m2</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/652f259f48364baf10d2c70f2d1b8c604082bee1678b889db215d30fdf768abe.png" src="../../_images/652f259f48364baf10d2c70f2d1b8c604082bee1678b889db215d30fdf768abe.png" />
+<img alt="../../_images/0d20c3fd32b385bec10bb83fa75ec7e1b9183ae795dedf319626d3832b702b9a.png" src="../../_images/0d20c3fd32b385bec10bb83fa75ec7e1b9183ae795dedf319626d3832b702b9a.png" />
 </div>
 </div>
 </section>
@@ -1658,17 +1957,17 @@ dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
-<style>
-    .dataframe thead tr:only-child th {
-        text-align: right;
-    }
-
-    .dataframe thead th {
-        text-align: left;
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">

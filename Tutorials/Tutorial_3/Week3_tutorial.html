@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Train test split method &#8212; CEIC6789</title>
+    <title>Linear regression &#8212; CEIC6789</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_4/Lecture4_Train_Test_Split';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/Tutorial_3/Week3_tutorial';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="12. Logistic regression" href="../lecture_5/Lecture5_logistic_regression.html" />
-    <link rel="prev" title="4. Import the relevant libraries" href="Lecture4_multiple_linear_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -186,20 +186,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Details/Resources.html">Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_4/Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
 
 
 
 
 
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_4/Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
 </ul>
 
     </div>
@@ -269,7 +269,7 @@
       
       
       
-      <li><a href="../../_sources/Lectures/lecture_4/Lecture4_Train_Test_Split.ipynb" target="_blank"
+      <li><a href="../../_sources/Tutorials/Tutorial_3/Week3_tutorial.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -353,7 +353,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Train test split method</h1>
+    <h1>Linear regression</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -363,11 +363,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">11.1. Import relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">11.2. Generate data we are going to split</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">11.3. Split the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">11.4. Explore the result</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Linear regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">1. Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2. Load the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">3. Explore the descriptive statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">4. Data preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-the-variables-of-interest">4.1 Keep the variables of interest</a></li>
 </ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5. Linear regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-function-called-model-regression-that-takes-two-inputs-features-and-target-performs-simple-as-well-as-multiple-linear-regression-using-sklearn-and-returns-a-dictionary-containing-outputs-coefficients-intercept-and-r-squared-value">5.1 Write a function called model_regression that takes two inputs (features and target), performs simple as well as multiple linear regression using sklearn, and returns a dictionary containing outputs (coefficients, intercept and R-squared value)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-function-above-to-obtain-the-output-for-a-simple-linear-regression-between-price-and-motor-size">5.2 Use the function above to obtain the output for a simple linear regression between price and motor size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-use-the-function-to-obtain-the-output-for-multiple-regression-between-price-and-three-features-size-power-and-time">5.3 Now, use the function to obtain the output for multiple regression between price and three features, size, power and time.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carry-out-an-f-regression-test-to-determine-which-features-are-significant">5.4 Carry out an F regression test to determine which features are significant.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+</ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -378,158 +394,95 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="train-test-split-method">
-<h1><span class="section-number">11. </span>Train test split method<a class="headerlink" href="#train-test-split-method" title="Link to this heading">#</a></h1>
-<section id="import-relevant-libraries">
-<h2><span class="section-number">11.1. </span>Import relevant libraries<a class="headerlink" href="#import-relevant-libraries" title="Link to this heading">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="linear-regression">
+<h1>Linear regression<a class="headerlink" href="#linear-regression" title="Link to this heading">#</a></h1>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
+<p>Lavazza, a famous Italian coffee-product manufacturer has decided to launch a new commericial coffee grinder in Sweden. They have asked you to understand the factors affecting the pricing of coffee grinders in the Swedish market, since they expect it to be different from the Italian market.</p>
+<p>They have handed you a dataset pertinent to the Swedish market (coffee_grinder.xlsx) that contains the following 5 variables:</p>
+<ul class="simple">
+<li><p>name: Name of the grinder.</p></li>
+<li><p>size: The size of the motor that goes in the grinder (scaled units).</p></li>
+<li><p>power: The power associated with the motor (watts).</p></li>
+<li><p>time100: time taken by the grinder to grind 1 kg of coffee beans at 100% motor operation (seconds).</p></li>
+<li><p>price: the price of the grinder (swedish krone).</p></li>
+</ul>
+<p>Given these variables, you are required to apply linear regression to model the price of coffee grinders. Your model will help Lavazza to understand how the prices depend on various features and determine which independent variables are significant. They can then design a new coffee grinder for the Swedish market.</p>
+<p>Here’s a template that assigns several tasks for you and also provides a roadmap to guide you. Please note, you are free to follow your own coding style and name the variables the way you like.</p>
+</section>
+<section id="import-the-relevant-libraries">
+<h2>1. Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
+</section>
+<section id="load-the-data">
+<h2>2. Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h2>
+</section>
+<section id="explore-the-descriptive-statistics">
+<h2>3. Explore the descriptive statistics<a class="headerlink" href="#explore-the-descriptive-statistics" title="Link to this heading">#</a></h2>
+</section>
+<section id="data-preprocessing">
+<h2>4. Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h2>
+<section id="keep-the-variables-of-interest">
+<h3>4.1 Keep the variables of interest<a class="headerlink" href="#keep-the-variables-of-interest" title="Link to this heading">#</a></h3>
+<p>Note: you are not required to perform anything else in this section at this point since the dataset is already quite clean. Simply remember that much more data preprocessing happens at this stage if necessary.</p>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>5. Linear regression<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="write-a-function-called-model-regression-that-takes-two-inputs-features-and-target-performs-simple-as-well-as-multiple-linear-regression-using-sklearn-and-returns-a-dictionary-containing-outputs-coefficients-intercept-and-r-squared-value">
+<h2>5.1 Write a function called model_regression that takes two inputs (features and target), performs simple as well as multiple linear regression using sklearn, and returns a dictionary containing outputs (coefficients, intercept and R-squared value)<a class="headerlink" href="#write-a-function-called-model-regression-that-takes-two-inputs-features-and-target-performs-simple-as-well-as-multiple-linear-regression-using-sklearn-and-returns-a-dictionary-containing-outputs-coefficients-intercept-and-r-squared-value" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">model_regression</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+
+    <span class="c1"># Perform regression</span>
+
+
+    <span class="c1"># Coefficients</span>
+
+
+    <span class="c1"># Intercept</span>
+
+
+    <span class="c1"># R-squared</span>
+
+
+    <span class="c1"># Create a dictionary containing all the outputs</span>
+    <span class="n">dout</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+
+
+    <span class="k">return</span> <span class="n">dout</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="generate-data-we-are-going-to-split">
-<h2><span class="section-number">11.2. </span>Generate data we are going to split<a class="headerlink" href="#generate-data-we-are-going-to-split" title="Link to this heading">#</a></h2>
+<section id="use-the-function-above-to-obtain-the-output-for-a-simple-linear-regression-between-price-and-motor-size">
+<h2>5.2 Use the function above to obtain the output for a simple linear regression between price and motor size<a class="headerlink" href="#use-the-function-above-to-obtain-the-output-for-a-simple-linear-regression-between-price-and-motor-size" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the regression line on the scatter plot of price vs. motor size</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([  1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12,  13,
-        14,  15,  16,  17,  18,  19,  20,  21,  22,  23,  24,  25,  26,
-        27,  28,  29,  30,  31,  32,  33,  34,  35,  36,  37,  38,  39,
-        40,  41,  42,  43,  44,  45,  46,  47,  48,  49,  50,  51,  52,
-        53,  54,  55,  56,  57,  58,  59,  60,  61,  62,  63,  64,  65,
-        66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,  78,
-        79,  80,  81,  82,  83,  84,  85,  86,  87,  88,  89,  90,  91,
-        92,  93,  94,  95,  96,  97,  98,  99, 100])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">401</span><span class="p">,</span><span class="mi">501</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413,
-       414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426,
-       427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439,
-       440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452,
-       453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465,
-       466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478,
-       479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491,
-       492, 493, 494, 495, 496, 497, 498, 499, 500])
-</pre></div>
-</div>
-</div>
-</div>
+<p>By looking at the R-squared value, can you tell if the motor size is a poor/decent/excellent factor to explain price? How can you improve the explanatory power of the model?</p>
 </section>
-<section id="split-the-data">
-<h2><span class="section-number">11.3. </span>Split the data<a class="headerlink" href="#split-the-data" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span><span class="p">,</span> <span class="n">a_test</span><span class="p">,</span> <span class="n">b_train</span><span class="p">,</span> <span class="n">b_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="now-use-the-function-to-obtain-the-output-for-multiple-regression-between-price-and-three-features-size-power-and-time">
+<h2>5.3 Now, use the function to obtain the output for multiple regression between price and three features, size, power and time.<a class="headerlink" href="#now-use-the-function-to-obtain-the-output-for-multiple-regression-between-price-and-three-features-size-power-and-time" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Did the R2 value increase or decrease compared to the one obtained in simple regression? Why?</p></li>
+<li><p>Write down the linear regression model</p></li>
+</ul>
 </section>
-<section id="explore-the-result">
-<h2><span class="section-number">11.4. </span>Explore the result<a class="headerlink" href="#explore-the-result" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">a_test</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>((80,), (20,))
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
-       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
-       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
-       52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68,
-       69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 81,  82,  83,  84,  85,  86,  87,  88,  89,  90,  91,  92,  93,
-        94,  95,  96,  97,  98,  99, 100])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_train</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413,
-       414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426,
-       427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439,
-       440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452,
-       453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465,
-       466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478,
-       479, 480])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b_test</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493,
-       494, 495, 496, 497, 498, 499, 500])
-</pre></div>
-</div>
-</div>
-</div>
+<section id="carry-out-an-f-regression-test-to-determine-which-features-are-significant">
+<h2>5.4 Carry out an F regression test to determine which features are significant.<a class="headerlink" href="#carry-out-an-f-regression-test-to-determine-which-features-are-significant" title="Link to this heading">#</a></h2>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
+<p>Last week, we learnt that imputation of missing values can be done more meaningfully if there are correlations between variables and if we can take that into consideration. This question is aimed to further improve upon this idea by replacing the missing values using a linear regression model.</p>
+<p>Use the ‘coffee_grinder_imputation.xlsx’ file. You will see that there is an extra variable called time75 (time taken by the grinder to grind 1 kg of coffee beans at 75% capacity). This column contains several missing values and you are asked to impute them.</p>
+<p>Write a code that calculates the correlation between the input variables and find out which variable is most correlated with time75. Once this is done, write a linear regression code to connect these two and impute the missing values.</p>
 </section>
 </section>
 
@@ -546,7 +499,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./Lectures/lecture_4"
+            path: "./Tutorials/Tutorial_3"
         },
         predefinedOutput: true
     }
@@ -563,24 +516,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Lecture4_multiple_linear_regression.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Import the relevant libraries</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../lecture_5/Lecture5_logistic_regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Logistic regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -597,11 +532,27 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">11.1. Import relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">11.2. Generate data we are going to split</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">11.3. Split the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">11.4. Explore the result</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Linear regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">1. Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2. Load the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">3. Explore the descriptive statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-preprocessing">4. Data preprocessing</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keep-the-variables-of-interest">4.1 Keep the variables of interest</a></li>
 </ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">5. Linear regression</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#write-a-function-called-model-regression-that-takes-two-inputs-features-and-target-performs-simple-as-well-as-multiple-linear-regression-using-sklearn-and-returns-a-dictionary-containing-outputs-coefficients-intercept-and-r-squared-value">5.1 Write a function called model_regression that takes two inputs (features and target), performs simple as well as multiple linear regression using sklearn, and returns a dictionary containing outputs (coefficients, intercept and R-squared value)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-function-above-to-obtain-the-output-for-a-simple-linear-regression-between-price-and-motor-size">5.2 Use the function above to obtain the output for a simple linear regression between price and motor size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-use-the-function-to-obtain-the-output-for-multiple-regression-between-price-and-three-features-size-power-and-time">5.3 Now, use the function to obtain the output for multiple regression between price and three features, size, power and time.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#carry-out-an-f-regression-test-to-determine-which-features-are-significant">5.4 Carry out an F regression test to determine which features are significant.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+</ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
