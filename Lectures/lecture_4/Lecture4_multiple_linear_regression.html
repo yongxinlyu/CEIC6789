@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>4. Import the relevant libraries &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>Import the relevant libraries &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -60,8 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_4/Lecture4_multiple_linear_regression';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="11. Train test split method" href="Lecture4_Train_Test_Split.html" />
-    <link rel="prev" title="3. Multiple linear regression" href="../lecture_3/Lecture3_multiple_linear_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -186,28 +186,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Info/Resources.html">Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Import the relevant libraries</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_1/Lecture1_info.html">Lecture 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_2/Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">Data preprocessing</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">14. Week 1 tutorial: Python basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">15. Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Tutorials/tutorial_1/tutorial1_info.html">Tutorial 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">Week 1 tutorial: Python basics</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">17. Week 1 tutorial: Data preprocessing and analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">18. Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -438,23 +435,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Import the relevant libraries</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">5. Load the data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">6. Explore the descriptive statistics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-ols-assumptions">7. Check the OLS assumptions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-1-linearity">7.1. Assumption 1: Linearity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-2-homoscedasticity">7.2. Assumption 2: Homoscedasticity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-3-autocorrelation">7.3. Assumption 3: Autocorrelation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-4-multicollinearity">7.4. Assumption 4: Multicollinearity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Import the relevant libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">Explore the descriptive statistics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-ols-assumptions">Check the OLS assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-1-linearity">Assumption 1: Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-2-homoscedasticity">Assumption 2: Homoscedasticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-3-autocorrelation">Assumption 3: Autocorrelation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-4-multicollinearity">Assumption 4: Multicollinearity</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dummy-variables">8. Create dummy variables</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-model">9. Linear regression model</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-inputs-and-the-targets">9.1. Declare the inputs and the targets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">9.2. Feature scaling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dummy-variables">Create dummy variables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-model">Linear regression model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-inputs-and-the-targets">Declare the inputs and the targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature scaling</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">10. Train test split</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">Train test split</a></li>
 </ul>
 
             </nav>
@@ -519,7 +516,7 @@ document.write(`
 <p>Ok, that’s about it for our lecture on assumptions in linear regression. Let’s now look at an example where these assumptions are put to practice!</p>
 <p>Let’s assume that you are working for a second-hand car sale company. They have gathered information from several customers about their car specifications including the price of the car they wish to avail. The primary goal for you is to predict the price of a car given these attributes. Let’s go ahead and look at the data set in our notebook directly.</p>
 <section id="import-the-relevant-libraries">
-<h1><span class="section-number">4. </span>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h1>
+<h1>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h1>
 <p>As usual, before we get to data, the first steps are to import the relevant libraries.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -534,7 +531,7 @@ document.write(`
 </div>
 </section>
 <section id="load-the-data">
-<h1><span class="section-number">5. </span>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h1>
+<h1>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h1>
 <p>Now, I’ll load the dataset in the variable data and print out a few lines of the dataset. (pause)</p>
 <p>OK, here’s our data set.</p>
 <p>This is a list of second hand cars containing specifications such as the brand, price of the car, mileage, engine volume and the year of registration. To recap, our goal is to predict the price of a used car depending on its specifications.</p>
@@ -623,7 +620,7 @@ document.write(`
 </div>
 </section>
 <section id="explore-the-descriptive-statistics">
-<h1><span class="section-number">6. </span>Explore the descriptive statistics<a class="headerlink" href="#explore-the-descriptive-statistics" title="Link to this heading">#</a></h1>
+<h1>Explore the descriptive statistics<a class="headerlink" href="#explore-the-descriptive-statistics" title="Link to this heading">#</a></h1>
 <p>So, let’s explore the descriptive statistics now. We see that there are no missing values. Further, the values seem within expected ranges, so no need to do a thorough outlier analysis here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -752,7 +749,7 @@ document.write(`
 </div>
 </section>
 <section id="check-the-ols-assumptions">
-<h1><span class="section-number">7. </span>Check the OLS assumptions<a class="headerlink" href="#check-the-ols-assumptions" title="Link to this heading">#</a></h1>
+<h1>Check the OLS assumptions<a class="headerlink" href="#check-the-ols-assumptions" title="Link to this heading">#</a></h1>
 <p>Ok, in the previous lectures, we basically went ahead with regression without checking for the ordinary least square method assumptions. That’s ok because we learnt the mechanics of how linear regression models are built. However, in reality, before one goes ahead and builds a linear regression model, we need to make sure we are not violating the assumptions we studied. That’s the task we will do right now.</p>
 <p>So, here we have a new section called “Check the OLS assumptions”.</p>
 <p>The first assumption we want to check is if the plots of the dependent variable vs the independent variables are linear, so that a linear regression model could be applied. To do so, let’s plot the relevant scatter plots amongst the numerical variables.</p>
@@ -761,7 +758,7 @@ document.write(`
 <p>We can see that there are patterns here, but they are not linear. Therefore, we should not run a linear regression immediately. We should first transform one or more variables, and make them eligibile for linear regression modeling.</p>
 <p>We can see from Prive vs Mileage and Price vs. year plots that the relationship is somewhat exponential. So, let’s go ahead and apply a log transformation to the price variable.</p>
 <section id="assumption-1-linearity">
-<h2><span class="section-number">7.1. </span>Assumption 1: Linearity<a class="headerlink" href="#assumption-1-linearity" title="Link to this heading">#</a></h2>
+<h2>Assumption 1: Linearity<a class="headerlink" href="#assumption-1-linearity" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -979,15 +976,15 @@ Now we can create a new column called log_price in the same dataframe and store 
 </div>
 </section>
 <section id="assumption-2-homoscedasticity">
-<h2><span class="section-number">7.2. </span>Assumption 2: Homoscedasticity<a class="headerlink" href="#assumption-2-homoscedasticity" title="Link to this heading">#</a></h2>
+<h2>Assumption 2: Homoscedasticity<a class="headerlink" href="#assumption-2-homoscedasticity" title="Link to this heading">#</a></h2>
 <p>Now, we come to our second assumption, that is homoscedasticity. We can see from the above plots that this assumption more or less holds true (pause). The reason for this is that we have already implemented a log transformation, which happens to be a good technique to circumvent the issue of homoscedasticity! So, we don’t need to do anything here.</p>
 </section>
 <section id="assumption-3-autocorrelation">
-<h2><span class="section-number">7.3. </span>Assumption 3: Autocorrelation<a class="headerlink" href="#assumption-3-autocorrelation" title="Link to this heading">#</a></h2>
+<h2>Assumption 3: Autocorrelation<a class="headerlink" href="#assumption-3-autocorrelation" title="Link to this heading">#</a></h2>
 <p>Once again, we don’t need to put in much efforts here since these observations are not coming from time series data. Each of these observations comes randomly from different customers who are willing to sell their cars through the platform. Therefore, there is no reason to worry about the observations to be dependent on each other.</p>
 </section>
 <section id="assumption-4-multicollinearity">
-<h2><span class="section-number">7.4. </span>Assumption 4: Multicollinearity<a class="headerlink" href="#assumption-4-multicollinearity" title="Link to this heading">#</a></h2>
+<h2>Assumption 4: Multicollinearity<a class="headerlink" href="#assumption-4-multicollinearity" title="Link to this heading">#</a></h2>
 <p>To check whether this assumption holds, we first look at the correlation matrix. We can do that by writing: data.corr(method=pearson). Good!</p>
 <p>Barring the dependent variable, we see that there is a strong correlation between year and Mileage. This makes sense because the older the car, the more distance it would have covered. Therefore we have grounds to expect some degree of multicollinearity in the dataset.</p>
 <p>We know that the variance inflation factor or VIF is a great way to check for multicollinearity. In order to avail this method, we use a library called statsmodels. We then import the variance_inflation_factor function from statsmodels by writing:
@@ -1189,7 +1186,7 @@ vif = pd.DataFrame()</p>
 </section>
 </section>
 <section id="create-dummy-variables">
-<h1><span class="section-number">8. </span>Create dummy variables<a class="headerlink" href="#create-dummy-variables" title="Link to this heading">#</a></h1>
+<h1>Create dummy variables<a class="headerlink" href="#create-dummy-variables" title="Link to this heading">#</a></h1>
 <p>Let’s look at the dataset, are we ready to apply a regression model? Not yet, we have a column called Brand, that represents categorical data and cannot be simply put in the regression. We need to reframe them appropriately before we can use them in a regression model. In this video, we will talk about how to do this using the concept of dummy variables. The word dummy means an imitation or a copy that stands as a substitute in regression analysis.</p>
 <p>A dummy is a variable that is used to include categorical data into a regression model. So far we have seen variables that are numerical in nature, for example, the efficiency, size of the catalyst, the price of a car, mileage, engine volume and the year of registration. We will now explore how to include variables such as the shape of a catalyst, the metal used in the catalyst or in other contexts, variables such as gender and brand into a regression model.</p>
 <p>In regression, we can handle the categorical data by replacing the values with zeros and ones. Let’s take some examples to see what I mean.</p>
@@ -1436,10 +1433,10 @@ vif = pd.DataFrame()</p>
 </div>
 </section>
 <section id="linear-regression-model">
-<h1><span class="section-number">9. </span>Linear regression model<a class="headerlink" href="#linear-regression-model" title="Link to this heading">#</a></h1>
+<h1>Linear regression model<a class="headerlink" href="#linear-regression-model" title="Link to this heading">#</a></h1>
 <p>Let’s go ahead and build our regression model. As always, the first step is to declare the inputs and the targets. So, our target is the log_price column, while the inputs are all the columns except the log_price, which we can assign using the drop method.</p>
 <section id="declare-the-inputs-and-the-targets">
-<h2><span class="section-number">9.1. </span>Declare the inputs and the targets<a class="headerlink" href="#declare-the-inputs-and-the-targets" title="Link to this heading">#</a></h2>
+<h2>Declare the inputs and the targets<a class="headerlink" href="#declare-the-inputs-and-the-targets" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">targets</span> <span class="o">=</span> <span class="n">data_pp</span><span class="p">[</span><span class="s1">&#39;log_price&#39;</span><span class="p">]</span>
@@ -1450,7 +1447,7 @@ vif = pd.DataFrame()</p>
 </div>
 </section>
 <section id="feature-scaling">
-<h2><span class="section-number">9.2. </span>Feature scaling<a class="headerlink" href="#feature-scaling" title="Link to this heading">#</a></h2>
+<h2>Feature scaling<a class="headerlink" href="#feature-scaling" title="Link to this heading">#</a></h2>
 <p>Ok, now one common problem in working with numerical data is the difference in magnitudes. In our example, the values associated with mileage are on the order of 100s, while the values associated with the engine volume are between 0.6 and 6.3. In data science and machine learning, people tend to dislike this difference and hence tend to fix this issue by using a concept called Feature scaling or standardization.</p>
 <p>So what is feature scaling? It is the process of transforming the data we are working with into a standard scale. Specifically, this translates to taking individual input columns, and subtracting the mean and dividing by the standard deviation values. What this operation does is, regardless of the data sets, we will always obtain a distribution with a mean of zero and a standard deviation of 1 which could easily be proven. This operation forces figures of very different scales to appear similar.</p>
 <p>Here’s an activity for you: given the following dataset, obtain the transformed dataset by subtracting the mean and dividing by standard deviation values for each of the columns. Note that we will use sklearn to carry out feature scaling in practical cases, where sklearn uses the population standard deviation. Therefore, you can use the formula for the population standard deviation in your activity.</p>
@@ -1517,7 +1514,7 @@ This line of code transforms the unscaled inputs using the information contained
 </section>
 </section>
 <section id="train-test-split">
-<h1><span class="section-number">10. </span>Train test split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h1>
+<h1>Train test split<a class="headerlink" href="#train-test-split" title="Link to this heading">#</a></h1>
 <p>Ok, let’s split our data into training and testing now.</p>
 <p>Let us import the train test split method from sklearn. (pause)</p>
 <p>Now, let x_train, x_test, y_train and u_test be equal to train_test_split brackets - The first argument refers to the X’s - So, write inputs_scaled and now the second argument refers to the Y’s - so, we write targets.</p>
@@ -1565,24 +1562,6 @@ This line of code transforms the unscaled inputs using the information contained
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../lecture_3/Lecture3_multiple_linear_regression.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Multiple linear regression</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Lecture4_Train_Test_Split.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>Train test split method</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1599,23 +1578,23 @@ This line of code transforms the unscaled inputs using the information contained
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">4. Import the relevant libraries</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">5. Load the data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">6. Explore the descriptive statistics</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-ols-assumptions">7. Check the OLS assumptions</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-1-linearity">7.1. Assumption 1: Linearity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-2-homoscedasticity">7.2. Assumption 2: Homoscedasticity</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-3-autocorrelation">7.3. Assumption 3: Autocorrelation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-4-multicollinearity">7.4. Assumption 4: Multicollinearity</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Import the relevant libraries</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">Explore the descriptive statistics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-the-ols-assumptions">Check the OLS assumptions</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-1-linearity">Assumption 1: Linearity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-2-homoscedasticity">Assumption 2: Homoscedasticity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-3-autocorrelation">Assumption 3: Autocorrelation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumption-4-multicollinearity">Assumption 4: Multicollinearity</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dummy-variables">8. Create dummy variables</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-model">9. Linear regression model</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-inputs-and-the-targets">9.1. Declare the inputs and the targets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">9.2. Feature scaling</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#create-dummy-variables">Create dummy variables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-regression-model">Linear regression model</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-inputs-and-the-targets">Declare the inputs and the targets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-scaling">Feature scaling</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">10. Train test split</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#train-test-split">Train test split</a></li>
 </ul>
 
   </nav></div>

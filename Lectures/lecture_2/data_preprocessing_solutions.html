@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1. Data preprocessing &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>Data preprocessing &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_2/data_preprocessing_solutions';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Simple linear regression" href="../lecture_3/Lecture3_simple_linear_regression.html" />
-    <link rel="prev" title="Resources" href="../../Info/Resources.html" />
+    <link rel="next" title="Tutorial 1 - Introduction to Data Science" href="../../Tutorials/tutorial_1/tutorial1_info.html" />
+    <link rel="prev" title="Lecture 2 - Data Preprocessing" href="Lecture2_info.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -187,27 +187,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Data preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_4/Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../lecture_4/Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_1/Lecture1_info.html">Lecture 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Data preprocessing</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">14. Week 1 tutorial: Python basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">15. Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Tutorials/tutorial_1/tutorial1_info.html">Tutorial 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">Week 1 tutorial: Python basics</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">17. Week 1 tutorial: Data preprocessing and analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">18. Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -438,23 +435,23 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">1.1. Import the relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">1.2. Load the raw data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics-of-the-variables">1.3. Explore the descriptive statistics of the variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">1.4. Determine the variables of interest to us</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-missing-values">1.5. Deal with missing values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-observations">1.5.1. Method 1: Remove observations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables">1.5.2. Method 2: Impute the missing values with mean or median (Applicable to numerical variables)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables">1.5.3. Method 3: Impute the missing values using interpolation (Applicable to numerical variables)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables">1.5.4. Method 4: Impute using the most frequent values (Applicable to categorical variables)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">Load the raw data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics-of-the-variables">Explore the descriptive statistics of the variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">Determine the variables of interest to us</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-missing-values">Deal with missing values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-observations">Method 1: Remove observations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables">Method 2: Impute the missing values with mean or median (Applicable to numerical variables)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables">Method 3: Impute the missing values using interpolation (Applicable to numerical variables)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables">Method 4: Impute using the most frequent values (Applicable to categorical variables)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">1.6. Deal with outliers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">1.6.1. Explore the probability distribution functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-values-above-or-below-a-certain-quantile">1.6.2. Method 1: Remove values above (or below) a certain quantile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-box-plots">1.6.3. Draw box plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-remove-values-using-the-interquartile-rule">1.6.4. Method 2: Remove values using the Interquartile rule</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-remove-values-using-a-z-score">1.6.5. Method 3: Remove values using a Z-score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">Deal with outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">Explore the probability distribution functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-values-above-or-below-a-certain-quantile">Method 1: Remove values above (or below) a certain quantile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-box-plots">Draw box plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-remove-values-using-the-interquartile-rule">Method 2: Remove values using the Interquartile rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-remove-values-using-a-z-score">Method 3: Remove values using a Z-score</a></li>
 </ul>
 </li>
 </ul>
@@ -470,9 +467,9 @@ document.write(`
                   
   <p><a class="reference download internal" download="" href="../../_downloads/3cb1657b35324240c836618eb86c0dee/Lecture2_notes.pdf"><span class="xref download myst">📄 Download lecture notes (PDF)</span></a></p>
 <section class="tex2jax_ignore mathjax_ignore" id="data-preprocessing">
-<h1><span class="section-number">1. </span>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h1>
+<h1>Data preprocessing<a class="headerlink" href="#data-preprocessing" title="Link to this heading">#</a></h1>
 <section id="import-the-relevant-libraries">
-<h2><span class="section-number">1.1. </span>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
+<h2>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -486,7 +483,7 @@ document.write(`
 </div>
 </section>
 <section id="load-the-raw-data">
-<h2><span class="section-number">1.2. </span>Load the raw data<a class="headerlink" href="#load-the-raw-data" title="Link to this heading">#</a></h2>
+<h2>Load the raw data<a class="headerlink" href="#load-the-raw-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#raw_data = pd.read_excel(&#39;cheese_taste.xlsx&#39;)</span>
@@ -800,7 +797,7 @@ document.write(`
 </div>
 </section>
 <section id="explore-the-descriptive-statistics-of-the-variables">
-<h2><span class="section-number">1.3. </span>Explore the descriptive statistics of the variables<a class="headerlink" href="#explore-the-descriptive-statistics-of-the-variables" title="Link to this heading">#</a></h2>
+<h2>Explore the descriptive statistics of the variables<a class="headerlink" href="#explore-the-descriptive-statistics-of-the-variables" title="Link to this heading">#</a></h2>
 <div class="cell tag_hide-input docutils container">
 <details class="hide above-input">
 <summary aria-label="Toggle hidden content">
@@ -946,7 +943,7 @@ document.write(`
 </div>
 </section>
 <section id="determine-the-variables-of-interest-to-us">
-<h2><span class="section-number">1.4. </span>Determine the variables of interest to us<a class="headerlink" href="#determine-the-variables-of-interest-to-us" title="Link to this heading">#</a></h2>
+<h2>Determine the variables of interest to us<a class="headerlink" href="#determine-the-variables-of-interest-to-us" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_interest</span> <span class="o">=</span> <span class="n">raw_data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Sample&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -1075,7 +1072,7 @@ document.write(`
 </div>
 </section>
 <section id="deal-with-missing-values">
-<h2><span class="section-number">1.5. </span>Deal with missing values<a class="headerlink" href="#deal-with-missing-values" title="Link to this heading">#</a></h2>
+<h2>Deal with missing values<a class="headerlink" href="#deal-with-missing-values" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_interest</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -1094,7 +1091,7 @@ dtype: int64
 </div>
 </div>
 <section id="method-1-remove-observations">
-<h3><span class="section-number">1.5.1. </span>Method 1: Remove observations<a class="headerlink" href="#method-1-remove-observations" title="Link to this heading">#</a></h3>
+<h3>Method 1: Remove observations<a class="headerlink" href="#method-1-remove-observations" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_no_mv_m1</span> <span class="o">=</span> <span class="n">data_interest</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -1224,7 +1221,7 @@ dtype: int64
 <p>A rule of thumb is that if you are removing &lt; 5% of the observations, this method could be applied. But be cautious, if you are dealing with smallish data sets, you might simply waste data this way.</p>
 </section>
 <section id="method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables">
-<h3><span class="section-number">1.5.2. </span>Method 2: Impute the missing values with mean or median (Applicable to numerical variables)<a class="headerlink" href="#method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables" title="Link to this heading">#</a></h3>
+<h3>Method 2: Impute the missing values with mean or median (Applicable to numerical variables)<a class="headerlink" href="#method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables" title="Link to this heading">#</a></h3>
 <p>From wikipedia: In statistics, imputation is the process of replacing missing data with substituted values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1512,13 +1509,13 @@ dtype: int64
 </div>
 </section>
 <section id="method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables">
-<h3><span class="section-number">1.5.3. </span>Method 3: Impute the missing values using interpolation (Applicable to numerical variables)<a class="headerlink" href="#method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables" title="Link to this heading">#</a></h3>
+<h3>Method 3: Impute the missing values using interpolation (Applicable to numerical variables)<a class="headerlink" href="#method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables" title="Link to this heading">#</a></h3>
 <p>Activity: Now that you understand how imputation is done, look up the internet and write a piece of code to carry out imputation using the interpolation method.</p>
 <p>In this method, rather than using the mean or median values to fill up missing values, interpolated values are used. This can be useful sometimes for improving prediction.</p>
 <p>This page gives you a nice overview of other Imputation methods: <a class="reference external" href="https://towardsdatascience.com/6-different-ways-to-compensate-for-missing-values-data-imputation-with-examples-6022d9ca0779">https://towardsdatascience.com/6-different-ways-to-compensate-for-missing-values-data-imputation-with-examples-6022d9ca0779</a></p>
 </section>
 <section id="method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables">
-<h3><span class="section-number">1.5.4. </span>Method 4: Impute using the most frequent values (Applicable to categorical variables)<a class="headerlink" href="#method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables" title="Link to this heading">#</a></h3>
+<h3>Method 4: Impute using the most frequent values (Applicable to categorical variables)<a class="headerlink" href="#method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_no_mv_m4</span> <span class="o">=</span> <span class="n">data_no_mv_m2</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1529,7 +1526,7 @@ dtype: int64
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2204/1543214328.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2194/1543214328.py:3: FutureWarning: A value is trying to be set on a copy of a DataFrame or Series through chained assignment using an inplace method.
 The behavior will change in pandas 3.0. This inplace method will never work because the intermediate object on which we are setting values always behaves as a copy.
 
 For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using &#39;df.method({col: value}, inplace=True)&#39; or df[col] = df[col].method(value) instead, to perform the operation inplace on the original object.
@@ -1811,7 +1808,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 </section>
 </section>
 <section id="deal-with-outliers">
-<h2><span class="section-number">1.6. </span>Deal with outliers<a class="headerlink" href="#deal-with-outliers" title="Link to this heading">#</a></h2>
+<h2>Deal with outliers<a class="headerlink" href="#deal-with-outliers" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_no_mv</span> <span class="o">=</span> <span class="n">data_no_mv_m4</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -1820,7 +1817,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 </div>
 </div>
 <section id="explore-the-probability-distribution-functions">
-<h3><span class="section-number">1.6.1. </span>Explore the probability distribution functions<a class="headerlink" href="#explore-the-probability-distribution-functions" title="Link to this heading">#</a></h3>
+<h3>Explore the probability distribution functions<a class="headerlink" href="#explore-the-probability-distribution-functions" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">])</span>
@@ -1829,7 +1826,7 @@ For example, when doing &#39;df[col].method(value, inplace=True)&#39;, try using
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2204/1051526947.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2194/1051526947.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1853,7 +1850,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2204/4228857375.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2194/4228857375.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1877,7 +1874,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2204/3527281904.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2194/3527281904.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1901,7 +1898,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2204/862876312.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2194/862876312.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1919,7 +1916,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </section>
 <section id="method-1-remove-values-above-or-below-a-certain-quantile">
-<h3><span class="section-number">1.6.2. </span>Method 1: Remove values above (or below) a certain quantile<a class="headerlink" href="#method-1-remove-values-above-or-below-a-certain-quantile" title="Link to this heading">#</a></h3>
+<h3>Method 1: Remove values above (or below) a certain quantile<a class="headerlink" href="#method-1-remove-values-above-or-below-a-certain-quantile" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.96</span><span class="p">)</span>
@@ -1936,7 +1933,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2204/3229253560.py:1: UserWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2194/3229253560.py:1: UserWarning: 
 
 `distplot` is a deprecated function and will be removed in seaborn v0.14.0.
 
@@ -1954,7 +1951,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </section>
 <section id="draw-box-plots">
-<h3><span class="section-number">1.6.3. </span>Draw box plots<a class="headerlink" href="#draw-box-plots" title="Link to this heading">#</a></h3>
+<h3>Draw box plots<a class="headerlink" href="#draw-box-plots" title="Link to this heading">#</a></h3>
 <p>Detailed information about box plots: <a class="reference external" href="https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51">https://towardsdatascience.com/understanding-boxplots-5e2df7bcbd51</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2002,7 +1999,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </section>
 <section id="method-2-remove-values-using-the-interquartile-rule">
-<h3><span class="section-number">1.6.4. </span>Method 2: Remove values using the Interquartile rule<a class="headerlink" href="#method-2-remove-values-using-the-interquartile-rule" title="Link to this heading">#</a></h3>
+<h3>Method 2: Remove values using the Interquartile rule<a class="headerlink" href="#method-2-remove-values-using-the-interquartile-rule" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q1</span> <span class="o">=</span> <span class="n">data_no_mv</span><span class="p">[</span><span class="s1">&#39;Acetic&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
@@ -2029,7 +2026,7 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
 </div>
 </section>
 <section id="method-3-remove-values-using-a-z-score">
-<h3><span class="section-number">1.6.5. </span>Method 3: Remove values using a Z-score<a class="headerlink" href="#method-3-remove-values-using-a-z-score" title="Link to this heading">#</a></h3>
+<h3>Method 3: Remove values using a Z-score<a class="headerlink" href="#method-3-remove-values-using-a-z-score" title="Link to this heading">#</a></h3>
 <p>Activity: Look up the internet and write a piece of code to carry out outlier removal using the Z-score method. This link gives you a nice overview of both the Z-score method as well as the Interquartile rule: <a class="reference external" href="https://medium.com/datadriveninvestor/finding-outliers-in-dataset-using-python-efc3fce6ce32">https://medium.com/datadriveninvestor/finding-outliers-in-dataset-using-python-efc3fce6ce32</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2328,20 +2325,20 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../Info/Resources.html"
+       href="Lecture2_info.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Resources</p>
+        <p class="prev-next-title">Lecture 2 - Data Preprocessing</p>
       </div>
     </a>
     <a class="right-next"
-       href="../lecture_3/Lecture3_simple_linear_regression.html"
+       href="../../Tutorials/tutorial_1/tutorial1_info.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Simple linear regression</p>
+        <p class="prev-next-title">Tutorial 1 - Introduction to Data Science</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2361,23 +2358,23 @@ https://gist.github.com/mwaskom/de44147ed2974457ad6372750bbe5751
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">1.1. Import the relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">1.2. Load the raw data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics-of-the-variables">1.3. Explore the descriptive statistics of the variables</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">1.4. Determine the variables of interest to us</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-missing-values">1.5. Deal with missing values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-observations">1.5.1. Method 1: Remove observations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables">1.5.2. Method 2: Impute the missing values with mean or median (Applicable to numerical variables)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables">1.5.3. Method 3: Impute the missing values using interpolation (Applicable to numerical variables)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables">1.5.4. Method 4: Impute using the most frequent values (Applicable to categorical variables)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">Load the raw data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics-of-the-variables">Explore the descriptive statistics of the variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">Determine the variables of interest to us</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-missing-values">Deal with missing values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-observations">Method 1: Remove observations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-impute-the-missing-values-with-mean-or-median-applicable-to-numerical-variables">Method 2: Impute the missing values with mean or median (Applicable to numerical variables)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-impute-the-missing-values-using-interpolation-applicable-to-numerical-variables">Method 3: Impute the missing values using interpolation (Applicable to numerical variables)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-4-impute-using-the-most-frequent-values-applicable-to-categorical-variables">Method 4: Impute using the most frequent values (Applicable to categorical variables)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">1.6. Deal with outliers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">1.6.1. Explore the probability distribution functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-values-above-or-below-a-certain-quantile">1.6.2. Method 1: Remove values above (or below) a certain quantile</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-box-plots">1.6.3. Draw box plots</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-remove-values-using-the-interquartile-rule">1.6.4. Method 2: Remove values using the Interquartile rule</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-remove-values-using-a-z-score">1.6.5. Method 3: Remove values using a Z-score</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">Deal with outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">Explore the probability distribution functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-remove-values-above-or-below-a-certain-quantile">Method 1: Remove values above (or below) a certain quantile</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#draw-box-plots">Draw box plots</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-remove-values-using-the-interquartile-rule">Method 2: Remove values using the Interquartile rule</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-remove-values-using-a-z-score">Method 3: Remove values using a Z-score</a></li>
 </ul>
 </li>
 </ul>

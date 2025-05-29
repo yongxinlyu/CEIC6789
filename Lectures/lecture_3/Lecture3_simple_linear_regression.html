@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>2. Simple linear regression &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>Simple linear regression &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -60,8 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_3/Lecture3_simple_linear_regression';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Multiple linear regression" href="Lecture3_multiple_linear_regression.html" />
-    <link rel="prev" title="1. Data preprocessing" href="../lecture_2/data_preprocessing_solutions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -186,28 +186,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Info/Resources.html">Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_4/Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../lecture_4/Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_1/Lecture1_info.html">Lecture 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_2/Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">Data preprocessing</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">14. Week 1 tutorial: Python basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">15. Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Tutorials/tutorial_1/tutorial1_info.html">Tutorial 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">Week 1 tutorial: Python basics</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">17. Week 1 tutorial: Data preprocessing and analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">18. Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -438,18 +435,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">2.1. Import the relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2.2. Load the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-simple-linear-regression">2.3. Create simple linear regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-dependent-and-the-independent-variables">2.3.1. Declare the dependent and the independent variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">2.3.2. Explore the data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.3.3. Regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficients">2.3.4. Coefficients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intercept">2.3.5. Intercept</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-regression">2.3.6. Plot the regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-squared">2.3.7. R-squared</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-predictions">2.3.8. Make predictions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-least-squares">2.3.9. Ordinary least squares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-simple-linear-regression">Create simple linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-dependent-and-the-independent-variables">Declare the dependent and the independent variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficients">Coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intercept">Intercept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-regression">Plot the regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-squared">R-squared</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-predictions">Make predictions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-least-squares">Ordinary least squares</a></li>
 </ul>
 </li>
 </ul>
@@ -464,9 +461,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simple-linear-regression">
-<h1><span class="section-number">2. </span>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Link to this heading">#</a></h1>
+<h1>Simple linear regression<a class="headerlink" href="#simple-linear-regression" title="Link to this heading">#</a></h1>
 <section id="import-the-relevant-libraries">
-<h2><span class="section-number">2.1. </span>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
+<h2>Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -482,7 +479,7 @@ document.write(`
 </div>
 </section>
 <section id="load-the-data">
-<h2><span class="section-number">2.2. </span>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h2>
+<h2>Load the data<a class="headerlink" href="#load-the-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;catalyst_efficiency.xlsx&#39;</span><span class="p">)</span>
@@ -650,9 +647,9 @@ document.write(`
 </div>
 </section>
 <section id="create-simple-linear-regression">
-<h2><span class="section-number">2.3. </span>Create simple linear regression<a class="headerlink" href="#create-simple-linear-regression" title="Link to this heading">#</a></h2>
+<h2>Create simple linear regression<a class="headerlink" href="#create-simple-linear-regression" title="Link to this heading">#</a></h2>
 <section id="declare-the-dependent-and-the-independent-variables">
-<h3><span class="section-number">2.3.1. </span>Declare the dependent and the independent variables<a class="headerlink" href="#declare-the-dependent-and-the-independent-variables" title="Link to this heading">#</a></h3>
+<h3>Declare the dependent and the independent variables<a class="headerlink" href="#declare-the-dependent-and-the-independent-variables" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;efficiency&#39;</span><span class="p">]</span>
@@ -700,7 +697,7 @@ document.write(`
 </div>
 </section>
 <section id="explore-the-data">
-<h3><span class="section-number">2.3.2. </span>Explore the data<a class="headerlink" href="#explore-the-data" title="Link to this heading">#</a></h3>
+<h3>Explore the data<a class="headerlink" href="#explore-the-data" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -716,7 +713,7 @@ document.write(`
 </div>
 </section>
 <section id="regression">
-<h3><span class="section-number">2.3.3. </span>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
+<h3>Regression<a class="headerlink" href="#regression" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
@@ -1145,7 +1142,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>More on normalization: <a class="reference external" href="https://en.wikipedia.org/wiki/Feature_scaling">https://en.wikipedia.org/wiki/Feature_scaling</a></p>
 </section>
 <section id="coefficients">
-<h3><span class="section-number">2.3.4. </span>Coefficients<a class="headerlink" href="#coefficients" title="Link to this heading">#</a></h3>
+<h3>Coefficients<a class="headerlink" href="#coefficients" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">coef_</span>
@@ -1160,7 +1157,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 <section id="intercept">
-<h3><span class="section-number">2.3.5. </span>Intercept<a class="headerlink" href="#intercept" title="Link to this heading">#</a></h3>
+<h3>Intercept<a class="headerlink" href="#intercept" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span>
@@ -1175,7 +1172,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 <section id="plot-the-regression">
-<h3><span class="section-number">2.3.6. </span>Plot the regression<a class="headerlink" href="#plot-the-regression" title="Link to this heading">#</a></h3>
+<h3>Plot the regression<a class="headerlink" href="#plot-the-regression" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -1193,7 +1190,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 <section id="r-squared">
-<h3><span class="section-number">2.3.7. </span>R-squared<a class="headerlink" href="#r-squared" title="Link to this heading">#</a></h3>
+<h3>R-squared<a class="headerlink" href="#r-squared" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_mat</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
@@ -1208,7 +1205,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 <section id="make-predictions">
-<h3><span class="section-number">2.3.8. </span>Make predictions<a class="headerlink" href="#make-predictions" title="Link to this heading">#</a></h3>
+<h3>Make predictions<a class="headerlink" href="#make-predictions" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reg</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">25</span><span class="p">,]])</span>
@@ -1330,7 +1327,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </section>
 <section id="ordinary-least-squares">
-<h3><span class="section-number">2.3.9. </span>Ordinary least squares<a class="headerlink" href="#ordinary-least-squares" title="Link to this heading">#</a></h3>
+<h3>Ordinary least squares<a class="headerlink" href="#ordinary-least-squares" title="Link to this heading">#</a></h3>
 <p>Here is an activity for you: Please go through the following derivation in Wikipedia: <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_least_squares#Matrix/vector_formulation">https://en.wikipedia.org/wiki/Ordinary_least_squares#Matrix/vector_formulation</a>. You can then write a few lines of code using numpy arrays to obtain the coefficients as per the derivation. This activity will help you understand how numpy works and how to deal with arrays in python. So, do give it a try!</p>
 </section>
 </section>
@@ -1366,24 +1363,6 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../lecture_2/data_preprocessing_solutions.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Data preprocessing</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Lecture3_multiple_linear_regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Multiple linear regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -1400,18 +1379,18 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">2.1. Import the relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">2.2. Load the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-simple-linear-regression">2.3. Create simple linear regression</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-dependent-and-the-independent-variables">2.3.1. Declare the dependent and the independent variables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">2.3.2. Explore the data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">2.3.3. Regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficients">2.3.4. Coefficients</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intercept">2.3.5. Intercept</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-regression">2.3.6. Plot the regression</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-squared">2.3.7. R-squared</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-predictions">2.3.8. Make predictions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-least-squares">2.3.9. Ordinary least squares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-simple-linear-regression">Create simple linear regression</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#declare-the-dependent-and-the-independent-variables">Declare the dependent and the independent variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#regression">Regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coefficients">Coefficients</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intercept">Intercept</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-the-regression">Plot the regression</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#r-squared">R-squared</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-predictions">Make predictions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ordinary-least-squares">Ordinary least squares</a></li>
 </ul>
 </li>
 </ul>

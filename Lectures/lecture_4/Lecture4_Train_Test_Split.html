@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>11. Train test split method &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>Train test split method &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -60,8 +60,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Lectures/lecture_4/Lecture4_Train_Test_Split';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="12. Logistic regression" href="../lecture_5/Lecture5_logistic_regression.html" />
-    <link rel="prev" title="4. Import the relevant libraries" href="Lecture4_multiple_linear_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +121,8 @@
     <div class="bd-container__inner bd-page-width">
       
       
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -186,28 +186,25 @@
 <li class="toctree-l1"><a class="reference internal" href="../../Info/Resources.html">Resources</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_1/Lecture1_info.html">Lecture 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lecture_2/Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lecture_2/data_preprocessing_solutions.html">Data preprocessing</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">14. Week 1 tutorial: Python basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">15. Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Tutorials/tutorial_1/tutorial1_info.html">Tutorial 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1.html">Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part1_solutions.html">Week 1 tutorial: Python basics</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">17. Week 1 tutorial: Data preprocessing and analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">18. Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Tutorials/tutorial_1/Week1_tutorial_part2_solutions.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -438,10 +435,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">11.1. Import relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">11.2. Generate data we are going to split</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">11.3. Split the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">11.4. Explore the result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">Import relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">Generate data we are going to split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">Split the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">Explore the result</a></li>
 </ul>
             </nav>
         </div>
@@ -454,9 +451,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="train-test-split-method">
-<h1><span class="section-number">11. </span>Train test split method<a class="headerlink" href="#train-test-split-method" title="Link to this heading">#</a></h1>
+<h1>Train test split method<a class="headerlink" href="#train-test-split-method" title="Link to this heading">#</a></h1>
 <section id="import-relevant-libraries">
-<h2><span class="section-number">11.1. </span>Import relevant libraries<a class="headerlink" href="#import-relevant-libraries" title="Link to this heading">#</a></h2>
+<h2>Import relevant libraries<a class="headerlink" href="#import-relevant-libraries" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -467,7 +464,7 @@ document.write(`
 </div>
 </section>
 <section id="generate-data-we-are-going-to-split">
-<h2><span class="section-number">11.2. </span>Generate data we are going to split<a class="headerlink" href="#generate-data-we-are-going-to-split" title="Link to this heading">#</a></h2>
+<h2>Generate data we are going to split<a class="headerlink" href="#generate-data-we-are-going-to-split" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
@@ -522,7 +519,7 @@ document.write(`
 </div>
 </section>
 <section id="split-the-data">
-<h2><span class="section-number">11.3. </span>Split the data<a class="headerlink" href="#split-the-data" title="Link to this heading">#</a></h2>
+<h2>Split the data<a class="headerlink" href="#split-the-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span><span class="p">,</span> <span class="n">a_test</span><span class="p">,</span> <span class="n">b_train</span><span class="p">,</span> <span class="n">b_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">shuffle</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -532,7 +529,7 @@ document.write(`
 </div>
 </section>
 <section id="explore-the-result">
-<h2><span class="section-number">11.4. </span>Explore the result<a class="headerlink" href="#explore-the-result" title="Link to this heading">#</a></h2>
+<h2>Explore the result<a class="headerlink" href="#explore-the-result" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">a_test</span><span class="o">.</span><span class="n">shape</span>
@@ -638,24 +635,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="Lecture4_multiple_linear_regression.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Import the relevant libraries</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../lecture_5/Lecture5_logistic_regression.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>Logistic regression</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -672,10 +651,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">11.1. Import relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">11.2. Generate data we are going to split</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">11.3. Split the data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">11.4. Explore the result</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-relevant-libraries">Import relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-data-we-are-going-to-split">Generate data we are going to split</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#split-the-data">Split the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-result">Explore the result</a></li>
 </ul>
   </nav></div>
 

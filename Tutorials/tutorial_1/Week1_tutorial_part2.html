@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>17. Week 1 tutorial: Data preprocessing and analysis &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
+    <title>Week 1 tutorial: Data preprocessing and analysis &#8212; Data-Driven Decision Making in Chemical Engineering and Food Science (CEIC6789)</title>
   
   
   
@@ -62,8 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorials/tutorial_1/Week1_tutorial_part2';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="18. Week 1 tutorial: Data preprocessing and analysis" href="Week1_tutorial_part2_solutions.html" />
-    <link rel="prev" title="15. Week 1 tutorial: Python basics" href="Week1_tutorial_part1_solutions.html" />
+    <link rel="next" title="Week 1 tutorial: Data preprocessing and analysis" href="Week1_tutorial_part2_solutions.html" />
+    <link rel="prev" title="Week 1 tutorial: Python basics" href="Week1_tutorial_part1_solutions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -189,27 +189,24 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lectures</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_2/data_preprocessing_solutions.html">1. Data preprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_3/Lecture3_simple_linear_regression.html">2. Simple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_3/Lecture3_multiple_linear_regression.html">3. Multiple linear regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_4/Lecture4_multiple_linear_regression.html">4. Import the relevant libraries</a></li>
-
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_4/Lecture4_Train_Test_Split.html">11. Train test split method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_5/Lecture5_logistic_regression.html">12. Logistic regression</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lectures/lecture_5/Lecture5_multiple_logistic_regression.html">13. Multiple Logistic regression</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Lectures/lecture_1/Lecture1_info.html">Lecture 1 - Introduction to Data Science</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="simple">
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Lectures/lecture_2/Lecture2_info.html">Lecture 2 - Data Preprocessing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Lectures/lecture_2/data_preprocessing_solutions.html">Data preprocessing</a></li>
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Week1_tutorial_part1.html">14. Week 1 tutorial: Python basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Week1_tutorial_part1_solutions.html">15. Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorial1_info.html">Tutorial 1 - Introduction to Data Science</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Week1_tutorial_part1.html">Week 1 tutorial: Python basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Week1_tutorial_part1_solutions.html">Week 1 tutorial: Python basics</a></li>
 
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Week 1 tutorial: Data preprocessing and analysis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Week1_tutorial_part2_solutions.html">18. Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Week 1 tutorial: Data preprocessing and analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Week1_tutorial_part2_solutions.html">Week 1 tutorial: Data preprocessing and analysis</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -440,27 +437,27 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">17.1. Question 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">17.2. Question 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">17.3. 1. Import the relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">17.4. 2. Load the raw data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">17.5. 3. Explore the descriptive statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">17.6. 4. Determine the variables of interest to us</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#address-the-missing-values">17.7. 5. Address the missing values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-rows-or-columns-containing-missing-values">17.7.1. 5.1: Remove rows or columns containing missing values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-mean-of-the-columns-for-numerical-variables">17.7.2. 5.2: Impute using the mean of the columns (for numerical variables)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-most-frequent-value-categorical-variables">17.7.3. 5.3: Impute using the most frequent value (categorical variables)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">1. Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">2. Load the raw data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">3. Explore the descriptive statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">4. Determine the variables of interest to us</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#address-the-missing-values">5. Address the missing values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-rows-or-columns-containing-missing-values">5.1: Remove rows or columns containing missing values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-mean-of-the-columns-for-numerical-variables">5.2: Impute using the mean of the columns (for numerical variables)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-most-frequent-value-categorical-variables">5.3: Impute using the most frequent value (categorical variables)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">17.8. 6. Deal with outliers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">17.8.1. 6.1 Explore the probability distribution functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">6. Deal with outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">6.1 Explore the probability distribution functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company">17.9. 7. Are there any additional processing steps you could think of at this stage that could result in more insights for your company?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-matrix">17.10. 8. Correlation matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-frac-s-xy-s-x-s-y">17.11. <span class="math notranslate nohighlight">\(\Gamma = \frac{s_{xy}}{s_{x}s_{y}}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-frac-sigma-xy-sigma-x-sigma-y">17.12. <span class="math notranslate nohighlight">\(\rho = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how">17.13. 9. With the knowledge you gained regarding correlation, would you reapproach the imputation of the bottle type variable? If yes, how?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company">7. Are there any additional processing steps you could think of at this stage that could result in more insights for your company?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-matrix">8. Correlation matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-frac-s-xy-s-x-s-y"><span class="math notranslate nohighlight">\(\Gamma = \frac{s_{xy}}{s_{x}s_{y}}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-frac-sigma-xy-sigma-x-sigma-y"><span class="math notranslate nohighlight">\(\rho = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how">9. With the knowledge you gained regarding correlation, would you reapproach the imputation of the bottle type variable? If yes, how?</a></li>
 </ul>
             </nav>
         </div>
@@ -473,9 +470,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="week-1-tutorial-data-preprocessing-and-analysis">
-<h1><span class="section-number">17. </span>Week 1 tutorial: Data preprocessing and analysis<a class="headerlink" href="#week-1-tutorial-data-preprocessing-and-analysis" title="Link to this heading">#</a></h1>
+<h1>Week 1 tutorial: Data preprocessing and analysis<a class="headerlink" href="#week-1-tutorial-data-preprocessing-and-analysis" title="Link to this heading">#</a></h1>
 <section id="question-1">
-<h2><span class="section-number">17.1. </span>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
+<h2>Question 1<a class="headerlink" href="#question-1" title="Link to this heading">#</a></h2>
 <p>You are working for a pharmaceutical company that is interested in understanding the antimicrobic property of various molecules as a function of their respective three-dimensional (3D) structures. A preprocessing step involves transforming the 3D structure of each molecule to a computer-readable, numerical format (features). One such transformation method is to use an approach called the Coloumb matrix that mimics the electrostatic interaction between the nuclei of the atoms in a molecule.</p>
 <p>Coulomb matrix (M) is calculated using the equation below.</p>
 <p>\begin{equation}
@@ -526,7 +523,7 @@ M_{ij}^\mathrm{Coulomb}=\left{
 </div>
 </section>
 <section id="question-2">
-<h2><span class="section-number">17.2. </span>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
+<h2>Question 2<a class="headerlink" href="#question-2" title="Link to this heading">#</a></h2>
 <p>A juice manufacturing company has introduced a new product. They wanted to know if people liked the product or not, so they conducted an experiment where randomly chosen customers were asked to drink the juice and say whether they would be interested in buying the product. They have collected some relevant data, which is contained in juice_product.xlsx.</p>
 <p>There are seven variables (or columns):</p>
 <ul class="simple">
@@ -542,45 +539,45 @@ M_{ij}^\mathrm{Coulomb}=\left{
 <p>Here’s a template to guide you with the process. There is no right or wrong answer when it comes to data science. Some approaches lead to a greater prediction accuracy, while some lead to a lower accuracy. So, this is a template I have given you based on how I approached this problem. This doesn’t mean it’s the best template. So, feel free to explore your own template and approach this problem in your own way.</p>
 </section>
 <section id="import-the-relevant-libraries">
-<h2><span class="section-number">17.3. </span>1. Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
+<h2>1. Import the relevant libraries<a class="headerlink" href="#import-the-relevant-libraries" title="Link to this heading">#</a></h2>
 </section>
 <section id="load-the-raw-data">
-<h2><span class="section-number">17.4. </span>2. Load the raw data<a class="headerlink" href="#load-the-raw-data" title="Link to this heading">#</a></h2>
+<h2>2. Load the raw data<a class="headerlink" href="#load-the-raw-data" title="Link to this heading">#</a></h2>
 </section>
 <section id="explore-the-descriptive-statistics">
-<h2><span class="section-number">17.5. </span>3. Explore the descriptive statistics<a class="headerlink" href="#explore-the-descriptive-statistics" title="Link to this heading">#</a></h2>
+<h2>3. Explore the descriptive statistics<a class="headerlink" href="#explore-the-descriptive-statistics" title="Link to this heading">#</a></h2>
 </section>
 <section id="determine-the-variables-of-interest-to-us">
-<h2><span class="section-number">17.6. </span>4. Determine the variables of interest to us<a class="headerlink" href="#determine-the-variables-of-interest-to-us" title="Link to this heading">#</a></h2>
+<h2>4. Determine the variables of interest to us<a class="headerlink" href="#determine-the-variables-of-interest-to-us" title="Link to this heading">#</a></h2>
 <p>According to you, what variables are useful in understanding if a person likes a juice product or not? Try to retain those and remove the rest.</p>
 </section>
 <section id="address-the-missing-values">
-<h2><span class="section-number">17.7. </span>5. Address the missing values<a class="headerlink" href="#address-the-missing-values" title="Link to this heading">#</a></h2>
+<h2>5. Address the missing values<a class="headerlink" href="#address-the-missing-values" title="Link to this heading">#</a></h2>
 <section id="remove-rows-or-columns-containing-missing-values">
-<h3><span class="section-number">17.7.1. </span>5.1: Remove rows or columns containing missing values<a class="headerlink" href="#remove-rows-or-columns-containing-missing-values" title="Link to this heading">#</a></h3>
+<h3>5.1: Remove rows or columns containing missing values<a class="headerlink" href="#remove-rows-or-columns-containing-missing-values" title="Link to this heading">#</a></h3>
 <p>Which variables (containing missing values) would you like to address using this method? Think a bit and then decide to remove either rows or columns from the data set.</p>
 </section>
 <section id="impute-using-the-mean-of-the-columns-for-numerical-variables">
-<h3><span class="section-number">17.7.2. </span>5.2: Impute using the mean of the columns (for numerical variables)<a class="headerlink" href="#impute-using-the-mean-of-the-columns-for-numerical-variables" title="Link to this heading">#</a></h3>
+<h3>5.2: Impute using the mean of the columns (for numerical variables)<a class="headerlink" href="#impute-using-the-mean-of-the-columns-for-numerical-variables" title="Link to this heading">#</a></h3>
 <p>Which numerical variables would you like to impute using the mean? Select those and proceed using the sklearn approach we saw in Lecture 2.</p>
 </section>
 <section id="impute-using-the-most-frequent-value-categorical-variables">
-<h3><span class="section-number">17.7.3. </span>5.3: Impute using the most frequent value (categorical variables)<a class="headerlink" href="#impute-using-the-most-frequent-value-categorical-variables" title="Link to this heading">#</a></h3>
+<h3>5.3: Impute using the most frequent value (categorical variables)<a class="headerlink" href="#impute-using-the-most-frequent-value-categorical-variables" title="Link to this heading">#</a></h3>
 </section>
 </section>
 <section id="deal-with-outliers">
-<h2><span class="section-number">17.8. </span>6. Deal with outliers<a class="headerlink" href="#deal-with-outliers" title="Link to this heading">#</a></h2>
+<h2>6. Deal with outliers<a class="headerlink" href="#deal-with-outliers" title="Link to this heading">#</a></h2>
 <p>Here, think about how you want to address the outliers. Once again, there is no right or wrong approach. What makes sense to you? And rather what do you think would lead to a more meaningful result? To remove values beyond a certain critical number? Use the Interquartile rule? use the z-score? Or some other way you wish to handle this?</p>
 <section id="explore-the-probability-distribution-functions">
-<h3><span class="section-number">17.8.1. </span>6.1 Explore the probability distribution functions<a class="headerlink" href="#explore-the-probability-distribution-functions" title="Link to this heading">#</a></h3>
+<h3>6.1 Explore the probability distribution functions<a class="headerlink" href="#explore-the-probability-distribution-functions" title="Link to this heading">#</a></h3>
 <p>Perhaps you can start by exploring the probability distribution functions.</p>
 </section>
 </section>
 <section id="are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company">
-<h2><span class="section-number">17.9. </span>7. Are there any additional processing steps you could think of at this stage that could result in more insights for your company?<a class="headerlink" href="#are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company" title="Link to this heading">#</a></h2>
+<h2>7. Are there any additional processing steps you could think of at this stage that could result in more insights for your company?<a class="headerlink" href="#are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company" title="Link to this heading">#</a></h2>
 </section>
 <section id="correlation-matrix">
-<h2><span class="section-number">17.10. </span>8. Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Link to this heading">#</a></h2>
+<h2>8. Correlation matrix<a class="headerlink" href="#correlation-matrix" title="Link to this heading">#</a></h2>
 <p>Correlation is a standardized measure of the joint variability of two variables. It takes on values between -1 and 1, thus it is easy for us to interpret the result.</p>
 <ul class="simple">
 <li><p>A correlation of 1, known as perfect positive correlation, means that one variable is perfectly explained by the other. (We can observe a positive correlation between the interest in the product and the price a customer is willing to pay. The more interested they are, they are willing to pay more.)</p></li>
@@ -590,14 +587,14 @@ M_{ij}^\mathrm{Coulomb}=\left{
 <p>Sample correlation is given by:</p>
 </section>
 <section id="gamma-frac-s-xy-s-x-s-y">
-<h2><span class="section-number">17.11. </span><span class="math notranslate nohighlight">\(\Gamma = \frac{s_{xy}}{s_{x}s_{y}}\)</span><a class="headerlink" href="#gamma-frac-s-xy-s-x-s-y" title="Link to this heading">#</a></h2>
+<h2><span class="math notranslate nohighlight">\(\Gamma = \frac{s_{xy}}{s_{x}s_{y}}\)</span><a class="headerlink" href="#gamma-frac-s-xy-s-x-s-y" title="Link to this heading">#</a></h2>
 <p>Population correlation is given by:</p>
 </section>
 <section id="rho-frac-sigma-xy-sigma-x-sigma-y">
-<h2><span class="section-number">17.12. </span><span class="math notranslate nohighlight">\(\rho = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}\)</span><a class="headerlink" href="#rho-frac-sigma-xy-sigma-x-sigma-y" title="Link to this heading">#</a></h2>
+<h2><span class="math notranslate nohighlight">\(\rho = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}\)</span><a class="headerlink" href="#rho-frac-sigma-xy-sigma-x-sigma-y" title="Link to this heading">#</a></h2>
 </section>
 <section id="with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how">
-<h2><span class="section-number">17.13. </span>9. With the knowledge you gained regarding correlation, would you reapproach the imputation of the bottle type variable? If yes, how?<a class="headerlink" href="#with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how" title="Link to this heading">#</a></h2>
+<h2>9. With the knowledge you gained regarding correlation, would you reapproach the imputation of the bottle type variable? If yes, how?<a class="headerlink" href="#with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how" title="Link to this heading">#</a></h2>
 </section>
 </section>
 
@@ -637,7 +634,7 @@ M_{ij}^\mathrm{Coulomb}=\left{
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">15. </span>Week 1 tutorial: Python basics</p>
+        <p class="prev-next-title">Week 1 tutorial: Python basics</p>
       </div>
     </a>
     <a class="right-next"
@@ -645,7 +642,7 @@ M_{ij}^\mathrm{Coulomb}=\left{
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>Week 1 tutorial: Data preprocessing and analysis</p>
+        <p class="prev-next-title">Week 1 tutorial: Data preprocessing and analysis</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -665,27 +662,27 @@ M_{ij}^\mathrm{Coulomb}=\left{
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">17.1. Question 1</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">17.2. Question 2</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">17.3. 1. Import the relevant libraries</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">17.4. 2. Load the raw data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">17.5. 3. Explore the descriptive statistics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">17.6. 4. Determine the variables of interest to us</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#address-the-missing-values">17.7. 5. Address the missing values</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-rows-or-columns-containing-missing-values">17.7.1. 5.1: Remove rows or columns containing missing values</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-mean-of-the-columns-for-numerical-variables">17.7.2. 5.2: Impute using the mean of the columns (for numerical variables)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-most-frequent-value-categorical-variables">17.7.3. 5.3: Impute using the most frequent value (categorical variables)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-the-relevant-libraries">1. Import the relevant libraries</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-raw-data">2. Load the raw data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-descriptive-statistics">3. Explore the descriptive statistics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#determine-the-variables-of-interest-to-us">4. Determine the variables of interest to us</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#address-the-missing-values">5. Address the missing values</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-rows-or-columns-containing-missing-values">5.1: Remove rows or columns containing missing values</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-mean-of-the-columns-for-numerical-variables">5.2: Impute using the mean of the columns (for numerical variables)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#impute-using-the-most-frequent-value-categorical-variables">5.3: Impute using the most frequent value (categorical variables)</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">17.8. 6. Deal with outliers</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">17.8.1. 6.1 Explore the probability distribution functions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deal-with-outliers">6. Deal with outliers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-probability-distribution-functions">6.1 Explore the probability distribution functions</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company">17.9. 7. Are there any additional processing steps you could think of at this stage that could result in more insights for your company?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-matrix">17.10. 8. Correlation matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-frac-s-xy-s-x-s-y">17.11. <span class="math notranslate nohighlight">\(\Gamma = \frac{s_{xy}}{s_{x}s_{y}}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-frac-sigma-xy-sigma-x-sigma-y">17.12. <span class="math notranslate nohighlight">\(\rho = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}\)</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how">17.13. 9. With the knowledge you gained regarding correlation, would you reapproach the imputation of the bottle type variable? If yes, how?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#are-there-any-additional-processing-steps-you-could-think-of-at-this-stage-that-could-result-in-more-insights-for-your-company">7. Are there any additional processing steps you could think of at this stage that could result in more insights for your company?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#correlation-matrix">8. Correlation matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-frac-s-xy-s-x-s-y"><span class="math notranslate nohighlight">\(\Gamma = \frac{s_{xy}}{s_{x}s_{y}}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rho-frac-sigma-xy-sigma-x-sigma-y"><span class="math notranslate nohighlight">\(\rho = \frac{\sigma_{xy}}{\sigma_{x}\sigma_{y}}\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#with-the-knowledge-you-gained-regarding-correlation-would-you-reapproach-the-imputation-of-the-bottle-type-variable-if-yes-how">9. With the knowledge you gained regarding correlation, would you reapproach the imputation of the bottle type variable? If yes, how?</a></li>
 </ul>
   </nav></div>
 
