@@ -8,13 +8,14 @@ parts:
 - caption: Course Info
   numbered: false
   chapters:  
-  - file: Details/Contents
-  - file: Details/Learning  
-  - file: Details/Resources
-- caption: Notebooks
+  - file: Info/Contents
+  - file: Info/Learning  
+  - file: Info/Resources
+
+- caption: Lectures
   numbered: true
   chapters:
-  - file: Lectures/lecture_1/Lecture1_notes
+#  - file: Lectures/lecture_1/Lecture1_notes
   - file: Lectures/lecture_2/data_preprocessing_solutions
   - file: Lectures/lecture_3/Lecture3_simple_linear_regression
   - file: Lectures/lecture_3/Lecture3_multiple_linear_regression
@@ -22,3 +23,11 @@ parts:
   - file: Lectures/lecture_4/Lecture4_Train_Test_Split
   - file: Lectures/lecture_5/Lecture5_logistic_regression
   - file: Lectures/lecture_5/Lecture5_multiple_logistic_regression
+
+- caption: Tutorials
+  numbered: true
+  chapters:
+  - file: Tutorials/tutorial_1/Week1_tutorial_part1
+  - file: Tutorials/tutorial_1/Week1_tutorial_part1_solutions
+  - file: Tutorials/tutorial_1/Week1_tutorial_part2
+  - file: Tutorials/tutorial_1/Week1_tutorial_part2_solutions
