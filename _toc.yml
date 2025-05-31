@@ -38,6 +38,6 @@ parts:
     sections:
     - file: Tutorials/tutorial_1/Week1_tutorial_part1
     - file: Tutorials/tutorial_1/Week1_tutorial_part1_solutions
-    - file: Tutorials/tutorial_1/Week1_tutorial_part2
-    - file: Tutorials/tutorial_1/Week1_tutorial_part2_solutions
+    #- file: Tutorials/tutorial_1/Week1_tutorial_part2
+    #- file: Tutorials/tutorial_1/Week1_tutorial_part2_solutions
 
